@@ -1,0 +1,10 @@
+use_frameworks!
+
+target 'ChainOneKit-Example' do
+  pod 'ChainOneKit-Swift', :path => '../'
+
+  target 'ChainOneKitTests' do
+    inherit! :search_paths
+  end
+
+end
