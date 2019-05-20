@@ -26,6 +26,29 @@
       "source_files": "ChainOneKit/Source/Extension/UIKit+Extension/**/*"
     },
     {
+      "name": "Constant",
+      "source_files": "ChainOneKit/Source/Constant/**/*",
+      "dependencies": {
+        "ChainOneKit-Swift/UIKitExtension": [
+
+        ]
+      }
+    },
+    {
+      "name": "Template",
+      "source_files": [
+        "ChainOneKit/Source/Template/Controller/**/*",
+        "ChainOneKit/Source/Template/View/**/*",
+        "ChainOneKit/Source/Template/Vender/**/*",
+        "ChainOneKit/Source/Template/Other/**/*"
+      ],
+      "dependencies": {
+        "ChainOneKit-Swift/Constant": [
+
+        ]
+      }
+    },
+    {
       "name": "XDPackageTimer",
       "source_files": "ChainOneKit/Source/XDPackageTimer/**/*"
     }

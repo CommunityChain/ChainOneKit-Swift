@@ -1,9 +1,15 @@
 PODS:
   - ChainOneKit-Swift (0.0.1):
+    - ChainOneKit-Swift/Constant (= 0.0.1)
     - ChainOneKit-Swift/FoundationExtension (= 0.0.1)
+    - ChainOneKit-Swift/Template (= 0.0.1)
     - ChainOneKit-Swift/UIKitExtension (= 0.0.1)
     - ChainOneKit-Swift/XDPackageTimer (= 0.0.1)
+  - ChainOneKit-Swift/Constant (0.0.1):
+    - ChainOneKit-Swift/UIKitExtension
   - ChainOneKit-Swift/FoundationExtension (0.0.1)
+  - ChainOneKit-Swift/Template (0.0.1):
+    - ChainOneKit-Swift/Constant
   - ChainOneKit-Swift/UIKitExtension (0.0.1)
   - ChainOneKit-Swift/XDPackageTimer (0.0.1)
 
@@ -15,7 +21,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  ChainOneKit-Swift: 1d2a0faee97a4466472716e4812b1bc17e5eed2a
+  ChainOneKit-Swift: 5621e90191f7e582d64a68a2c89aa89cd4a1dc88
 
 PODFILE CHECKSUM: bebd73b3263340beab2adf8c819142213534a536
 
