@@ -1,0 +1,22 @@
+PODS:
+  - ChainOneKit-Swift (0.0.1):
+    - ChainOneKit-Swift/FoundationExtension (= 0.0.1)
+    - ChainOneKit-Swift/UIKitExtension (= 0.0.1)
+    - ChainOneKit-Swift/XDPackageTimer (= 0.0.1)
+  - ChainOneKit-Swift/FoundationExtension (0.0.1)
+  - ChainOneKit-Swift/UIKitExtension (0.0.1)
+  - ChainOneKit-Swift/XDPackageTimer (0.0.1)
+
+DEPENDENCIES:
+  - ChainOneKit-Swift (from `../`)
+
+EXTERNAL SOURCES:
+  ChainOneKit-Swift:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  ChainOneKit-Swift: 1d2a0faee97a4466472716e4812b1bc17e5eed2a
+
+PODFILE CHECKSUM: bebd73b3263340beab2adf8c819142213534a536
+
+COCOAPODS: 1.6.2

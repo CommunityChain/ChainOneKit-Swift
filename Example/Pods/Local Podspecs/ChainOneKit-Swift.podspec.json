@@ -1,0 +1,33 @@
+{
+  "name": "ChainOneKit-Swift",
+  "module_name": "ChainOneKit",
+  "version": "0.0.1",
+  "summary": "the kit for ChainOne in swift",
+  "license": "MIT",
+  "homepage": "https://github.com/CommunityChain/ChainOneKit-Swift.git",
+  "authors": {
+    "TangXiaoDe": "xiaodehappy@foxmail.com"
+  },
+  "source": {
+    "git": "https://github.com/CommunityChain/ChainOneKit-Swift.git",
+    "tag": "0.0.1"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "swift_version": "5.0",
+  "subspecs": [
+    {
+      "name": "FoundationExtension",
+      "source_files": "ChainOneKit/Source/Extension/Foundation+Extension/**/*"
+    },
+    {
+      "name": "UIKitExtension",
+      "source_files": "ChainOneKit/Source/Extension/UIKit+Extension/**/*"
+    },
+    {
+      "name": "XDPackageTimer",
+      "source_files": "ChainOneKit/Source/XDPackageTimer/**/*"
+    }
+  ]
+}
