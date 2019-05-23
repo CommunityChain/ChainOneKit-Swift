@@ -2,13 +2,13 @@ Pod::Spec.new do |spec|
 
   spec.name = 'ChainOneKit-Swift'
   spec.module_name = 'ChainOneKit'
-  spec.version = '0.0.1'
+  spec.version = '0.0.5'
   spec.summary = 'the kit for ChainOne in swift'
 
   spec.license = 'MIT'
   spec.homepage = 'https://github.com/CommunityChain/ChainOneKit-Swift.git'
   spec.authors = { 'TangXiaoDe' => 'xiaodehappy@foxmail.com' }
-  spec.source = { :git => 'https://github.com/CommunityChain/ChainOneKit-Swift.git', :tag => '0.0.1' }
+  spec.source = { :git => 'https://github.com/CommunityChain/ChainOneKit-Swift.git', :tag => '0.0.5' }
 
   spec.platform = :ios, "9.0"
 
@@ -36,6 +36,10 @@ Pod::Spec.new do |spec|
   end
   spec.subspec "XDNestView" do |nestView|
     nestView.source_files = 'ChainOneKit/Source/XDNestView/**/*'
+  end
+  spec.subspec "Helper" do |helper|
+    helper.source_files = 'ChainOneKit/Source/Helper/**/*'
+    helper.dependency 'ChainOneKit-Swift/FoundationExtension'
   end
 
 end
