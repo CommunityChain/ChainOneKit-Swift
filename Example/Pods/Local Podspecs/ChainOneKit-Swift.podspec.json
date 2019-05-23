@@ -51,6 +51,10 @@
     {
       "name": "XDPackageTimer",
       "source_files": "ChainOneKit/Source/XDPackageTimer/**/*"
+    },
+    {
+      "name": "XDNestView",
+      "source_files": "ChainOneKit/Source/XDNestView/**/*"
     }
   ]
 }
