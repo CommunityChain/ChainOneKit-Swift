@@ -34,5 +34,8 @@ Pod::Spec.new do |spec|
   spec.subspec "XDPackageTimer" do |timer|
     timer.source_files = 'ChainOneKit/Source/XDPackageTimer/**/*'
   end
+  spec.subspec "XDNestView" do |nestView|
+    nestView.source_files = 'ChainOneKit/Source/XDNestView/**/*'
+  end
 
 end
