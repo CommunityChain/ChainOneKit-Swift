@@ -42,50 +42,50 @@ public let kiPhoneXRScreenWidth: CGFloat = 414
 public let kiPhoneXRScreenHeight: CGFloat = 896
 
 // MARK: - 机型判断 根据屏蔽尺寸判断/还可以根据命名
-extension UIDevice {
+public extension UIDevice {
     /// iPhoneX判断
-    public func isiPhoneX() -> Bool {
+    func isiPhoneX() -> Bool {
         let resultFlag: Bool = UIScreen.main.bounds.size.equalTo(kiPhoneXScreenSize)
         return resultFlag
     }
 
     /// iPhone5系列判断(320, 568)
     /// iPhone5/5s/5c
-    public func isiPhone5series() -> Bool {
+    func isiPhone5series() -> Bool {
         let resultFlag: Bool = UIScreen.main.bounds.size.equalTo(kiPhone5ScreenSize)
         return resultFlag
     }
 
     /// iPhone6系列判断(375, 667)
     /// iPhone6/6s/7/7s/8/8s
-    public func isiPhone6Series() -> Bool {
+    func isiPhone6Series() -> Bool {
         let resultFlag: Bool = UIScreen.main.bounds.size.equalTo(kiPhone6ScreenSize)
         return resultFlag
     }
 
     /// iPhone6Plus系列判断(414, 736)
     /// iPhone6Plus/6sPlus/7Plus/7sPlus/8Plus/8sPlus
-    public func isiPhone6PlusSeries() -> Bool {
+    func isiPhone6PlusSeries() -> Bool {
         let resultFlag: Bool = UIScreen.main.bounds.size.equalTo(kiPhone6PlusScreenSize)
         return resultFlag
     }
 
     /// iPhoneX屏幕比例系列判断(375, 812)
-    public func isiPhoneXScreenSeries() -> Bool {
+    func isiPhoneXScreenSeries() -> Bool {
         let resultFlag: Bool = UIScreen.main.bounds.size.equalTo(kiPhoneXScreenSize)
         return resultFlag
     }
 
     /// iPhoneXR屏幕比例系列判断(414, 896)
     /// iPhoneXR/XMax
-    public func isiPhoneXRScreenSeries() -> Bool {
+    func isiPhoneXRScreenSeries() -> Bool {
         let resultFlag: Bool = UIScreen.main.bounds.size.equalTo(kiPhoneXRScreenSize)
         return resultFlag
     }
 
     /// iPhoneX系列判断
     /// iPhoneX/XR/XMax - X屏幕系列、XR屏幕系列
-    public func isiPhoneXSeries() -> Bool {
+    func isiPhoneXSeries() -> Bool {
         let resultFlag: Bool = self.isiPhoneXScreenSeries() || self.isiPhoneXRScreenSeries()
         return resultFlag
     }
@@ -93,7 +93,7 @@ extension UIDevice {
 }
 
 // MARK: - 屏幕比例判断
-extension UIDevice {
+public extension UIDevice {
 
     /// iPhone5的屏幕比例 - 1.775
     static let iPhone5ScreenScale: CGFloat = CGFloat(kiPhone5ScreenHeight) / CGFloat(kiPhone5ScreenWidth)
@@ -114,9 +114,9 @@ extension UIDevice {
 }
 
 // MARK: - 设备支持判断
-extension UIDevice {
+public extension UIDevice {
     // MARK: - touchID
-    public func isSupportTouchID() -> Bool {
+    func isSupportTouchID() -> Bool {
         let context = LAContext()
         var error: NSError?
         return context.canEvaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, error: &error)

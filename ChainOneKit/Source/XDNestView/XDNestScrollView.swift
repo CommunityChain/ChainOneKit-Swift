@@ -12,7 +12,7 @@ import UIKit
 
 typealias XDNestingScrollableScrollView = XDNestScrollView
 typealias XDNestingScrollScrollView = XDNestScrollView
-class XDNestScrollView: UIScrollView {
+public class XDNestScrollView: UIScrollView {
 
     // UIWebView/UIScrollView
     var allowViews: [UIView] = []
@@ -41,7 +41,7 @@ class XDNestScrollView: UIScrollView {
 extension XDNestScrollView: UIGestureRecognizerDelegate {
 
     // 返回YES表示可以继续传递触摸事件，这样两个嵌套的scrollView才能同时滚动
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         guard var view = otherGestureRecognizer.view else {
             return false
         }

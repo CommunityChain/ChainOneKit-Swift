@@ -12,7 +12,7 @@
 
 import UIKit
 
-protocol XDNestScrollContainerViewProtocol: class {
+public protocol XDNestScrollContainerViewProtocol: class {
 
     // 当内容可以滚动时会调用
     func nestingViewContentCanScroll(_ nestView: XDNestScrollContainerView) -> Void
@@ -26,7 +26,7 @@ protocol XDNestScrollContainerViewProtocol: class {
 }
 
 /// 嵌套滚动的容器，容器内布局 必须使用容器container
-class XDNestScrollContainerView: UIView {
+public class XDNestScrollContainerView: UIView {
 
     let container: XDNestScrollView = XDNestScrollView()
 
@@ -70,7 +70,7 @@ extension XDNestScrollContainerView {
 }
 
 extension XDNestScrollContainerView: UIScrollViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let containerScrollHeight = self.containerScrollHeight
         if !self.canScroll {
             // 不可滚动，通过固定contentOffset的值来实现

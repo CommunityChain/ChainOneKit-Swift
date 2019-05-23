@@ -10,7 +10,7 @@
 import Foundation
 
 // MARK: - 正则表达式判断
-extension String {
+public extension String {
     /// 正则匹配判断
     func isMatchRegex(_ strRegex: String) -> Bool {
         //let predicate = NSPredicate(format: "SELF MATCHES %@", strRegex)
@@ -27,7 +27,7 @@ extension String {
 
 
 // MARK: - 正则表达式应用
-extension String {
+public extension String {
     /// 正则匹配判断
     func isPhoneNum() -> Bool {
         // "^1([0-9]{10})$"

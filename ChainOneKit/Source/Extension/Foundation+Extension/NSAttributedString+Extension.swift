@@ -10,6 +10,6 @@
 import Foundation
 import UIKit
 
-extension NSAttributedString {
+public extension NSAttributedString {
 
 }

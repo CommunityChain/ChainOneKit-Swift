@@ -37,7 +37,7 @@ public extension Date {
 
 }
 
-extension Date {
+public extension Date {
 
     static func dateWithString(_ dateString: String, format: String = "yyyy-MM-dd HH:mm:ss", timeZone: TimeZone? = TimeZone.current) -> Date? {
         let dateFormatter = DateFormatter()
@@ -48,19 +48,19 @@ extension Date {
 
 }
 
-extension Date {
+public extension Date {
     /// 是否早于某个时间
-    public func isEarly(than compareDate: Date) -> Bool {
+    func isEarly(than compareDate: Date) -> Bool {
         return self < compareDate
     }
 
     /// 是否晚于某个时间
-    public func isLate(than compareDate: Date) -> Bool {
+    func isLate(than compareDate: Date) -> Bool {
         return self >= compareDate
     }
 }
 
-extension Date {
+public extension Date {
 
     func timeIntervalSecond() -> Int {
         return Int(self.timeIntervalSince1970)

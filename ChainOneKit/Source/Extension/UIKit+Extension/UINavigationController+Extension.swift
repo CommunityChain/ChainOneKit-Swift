@@ -11,7 +11,7 @@ import Foundation
 import UIKit
 
 // MARK: - 阴影 —— 导航栏 底部分割线
-extension UINavigationController {
+public extension UINavigationController {
 
     /// 隐藏导航栏上的阴影 —— 当前导航控制器
     func hiddenNavBarShadow() -> Void {
@@ -38,7 +38,7 @@ extension UINavigationController {
 }
 
 /// MARK: - 导航栏主题
-extension UINavigationController {
+public extension UINavigationController {
     /// 导航栏主题设置 - 对当前的导航控制器
     func setNavBarTheme(titleFont: UIFont, titleColor: UIColor, tintColor: UIColor, barTintColor: UIColor, isTranslucent: Bool = false, bgImage: UIImage = UIImage(), shadowColor: UIColor = UIColor.clear) -> Void {
         let navigationBar = self.navigationBar

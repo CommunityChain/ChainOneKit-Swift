@@ -9,7 +9,7 @@
 
 import Foundation
 
-extension Double {
+public extension Double {
     /// 小数部分的有效位数处理
     func decimalValidDigitsProcess(digits: Int = 4) -> String {
 
@@ -29,7 +29,7 @@ extension Double {
     }
 }
 
-extension Double {
+public extension Double {
 
     /// tb中大额数据处理
     func largeDecimalProcess() -> String {

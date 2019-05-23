@@ -10,7 +10,7 @@
 import Foundation
 import UIKit
 
-extension UIButton {
+public extension UIButton {
     // 带圆角的图片视图(可附加边框border)
     convenience init(font: UIFont? = nil, cornerRadius: CGFloat = 0, borderWidth: CGFloat = 0, borderColor: UIColor = UIColor.clear) {
         self.init(type: .custom)
@@ -27,7 +27,7 @@ extension UIButton {
     }
 }
 
-extension UIButton {
+public extension UIButton {
 
     func set(title: String?, titleColor: UIColor, image: UIImage? = nil, bgImage: UIImage? = nil, for state: UIControl.State) -> Void {
         self.setTitle(title, for: state)

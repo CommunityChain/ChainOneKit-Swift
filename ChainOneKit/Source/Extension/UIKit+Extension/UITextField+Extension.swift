@@ -10,7 +10,7 @@
 import Foundation
 import UIKit
 
-extension UITextField {
+public extension UITextField {
 
     convenience init(placeHolder: String?, text: String? = nil, font: UIFont, textColor: UIColor, alignment: NSTextAlignment = .left) {
         self.init(frame: CGRect.zero)

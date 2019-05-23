@@ -9,7 +9,7 @@
 
 import Foundation
 
-extension Timer {
+public extension Timer {
 
     /// 暂停
     func pause() {

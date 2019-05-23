@@ -10,7 +10,7 @@
 import Foundation
 import UIKit
 
-extension String {
+public extension String {
 
     func size(maxSize: CGSize, font: UIFont, lineMargin: CGFloat = 0) -> CGSize {
         let options: NSStringDrawingOptions = NSStringDrawingOptions.usesLineFragmentOrigin
@@ -27,7 +27,7 @@ extension String {
 }
 
 // MARK: - 字符串裁剪
-extension String {
+public extension String {
     /// 裁切字段
     func subString(with range: NSRange) -> String {
         // 注：如果 range.location + range.length > self.count 时，会崩溃
@@ -57,7 +57,7 @@ extension String {
     }
 }
 
-extension String {
+public extension String {
 
     /// 小数处理
     func decimalProcess(digits: Int = 2) -> String {

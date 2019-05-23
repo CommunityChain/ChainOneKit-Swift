@@ -9,7 +9,7 @@
 
 import Foundation
 
-extension FileManager {
+public extension FileManager {
     // 计算指定文件大小，文件夹也属于文件
     func fileSize(_ filePath: String) -> UInt64 {
         var fileSize: UInt64 = 0

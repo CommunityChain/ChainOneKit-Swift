@@ -7,7 +7,7 @@
 import Foundation
 import UIKit
 
-extension UIViewController {
+public extension UIViewController {
     /// 通过控制器名字构建控制器
     static func controllerWithName(_ name: String) -> UIViewController {
         // 1. Swift中新增了命名空间，通过字符串创建控制器需要带上命名空间

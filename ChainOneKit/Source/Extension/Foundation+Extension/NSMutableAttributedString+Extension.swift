@@ -10,7 +10,7 @@
 import Foundation
 import UIKit
 
-extension NSMutableAttributedString {
+public extension NSMutableAttributedString {
 
     class func attribute(string: String, font: UIFont?, textColor: UIColor?) -> NSMutableAttributedString {
         var attributes: [NSAttributedString.Key : Any] = [:]

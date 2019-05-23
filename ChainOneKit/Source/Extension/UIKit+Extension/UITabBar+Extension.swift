@@ -10,7 +10,7 @@
 import Foundation
 import UIKit
 
-extension UITabBar {
+public extension UITabBar {
     
     /// Title 和 Icon 的间距调整
     func setTitleImageInsets(titlePositionOffset: UIOffset, imageInsets: UIEdgeInsets) -> Void {

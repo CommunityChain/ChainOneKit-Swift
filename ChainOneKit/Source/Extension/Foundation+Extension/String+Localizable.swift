@@ -9,7 +9,7 @@
 
 import Foundation
 
-extension String {
+public extension String {
     
     /// 使用Localizable.strings命名时
     var localized: String {

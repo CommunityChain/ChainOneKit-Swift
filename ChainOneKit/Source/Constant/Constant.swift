@@ -12,7 +12,7 @@ import UIKit
 
 // MARK: - UserInterfacePrinciples
 
-struct ScreenSize {
+public struct ScreenSize {
     static let width: CGFloat = UIScreen.main.bounds.size.width
     static let height: CGFloat = UIScreen.main.bounds.size.height
     static let maxlength: CGFloat = max(ScreenSize.width, ScreenSize.height)

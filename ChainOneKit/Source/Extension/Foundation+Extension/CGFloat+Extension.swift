@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class XDHelper {
+public class XDHelper {
 
     class func round(_ value: CGFloat) -> CGFloat {
 //        return CGFloat(round(value))
@@ -18,7 +18,7 @@ class XDHelper {
 
 }
 
-extension CGFloat {
+public extension CGFloat {
 
     static let max = CGFloat(MAXFLOAT)
 
