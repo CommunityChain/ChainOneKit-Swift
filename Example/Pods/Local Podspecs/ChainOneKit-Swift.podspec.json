@@ -1,7 +1,7 @@
 {
   "name": "ChainOneKit-Swift",
   "module_name": "ChainOneKit",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "summary": "the kit for ChainOne in swift",
   "license": "MIT",
   "homepage": "https://github.com/CommunityChain/ChainOneKit-Swift.git",
@@ -10,7 +10,7 @@
   },
   "source": {
     "git": "https://github.com/CommunityChain/ChainOneKit-Swift.git",
-    "tag": "0.0.1"
+    "tag": "0.0.5"
   },
   "platforms": {
     "ios": "9.0"
@@ -55,6 +55,15 @@
     {
       "name": "XDNestView",
       "source_files": "ChainOneKit/Source/XDNestView/**/*"
+    },
+    {
+      "name": "Helper",
+      "source_files": "ChainOneKit/Source/Helper/**/*",
+      "dependencies": {
+        "ChainOneKit-Swift/FoundationExtension": [
+
+        ]
+      }
     }
   ]
 }

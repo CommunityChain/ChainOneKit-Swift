@@ -1,19 +1,22 @@
 PODS:
-  - ChainOneKit-Swift (0.0.1):
-    - ChainOneKit-Swift/Constant (= 0.0.1)
-    - ChainOneKit-Swift/FoundationExtension (= 0.0.1)
-    - ChainOneKit-Swift/Template (= 0.0.1)
-    - ChainOneKit-Swift/UIKitExtension (= 0.0.1)
-    - ChainOneKit-Swift/XDNestView (= 0.0.1)
-    - ChainOneKit-Swift/XDPackageTimer (= 0.0.1)
-  - ChainOneKit-Swift/Constant (0.0.1):
+  - ChainOneKit-Swift (0.0.5):
+    - ChainOneKit-Swift/Constant (= 0.0.5)
+    - ChainOneKit-Swift/FoundationExtension (= 0.0.5)
+    - ChainOneKit-Swift/Helper (= 0.0.5)
+    - ChainOneKit-Swift/Template (= 0.0.5)
+    - ChainOneKit-Swift/UIKitExtension (= 0.0.5)
+    - ChainOneKit-Swift/XDNestView (= 0.0.5)
+    - ChainOneKit-Swift/XDPackageTimer (= 0.0.5)
+  - ChainOneKit-Swift/Constant (0.0.5):
     - ChainOneKit-Swift/UIKitExtension
-  - ChainOneKit-Swift/FoundationExtension (0.0.1)
-  - ChainOneKit-Swift/Template (0.0.1):
+  - ChainOneKit-Swift/FoundationExtension (0.0.5)
+  - ChainOneKit-Swift/Helper (0.0.5):
+    - ChainOneKit-Swift/FoundationExtension
+  - ChainOneKit-Swift/Template (0.0.5):
     - ChainOneKit-Swift/Constant
-  - ChainOneKit-Swift/UIKitExtension (0.0.1)
-  - ChainOneKit-Swift/XDNestView (0.0.1)
-  - ChainOneKit-Swift/XDPackageTimer (0.0.1)
+  - ChainOneKit-Swift/UIKitExtension (0.0.5)
+  - ChainOneKit-Swift/XDNestView (0.0.5)
+  - ChainOneKit-Swift/XDPackageTimer (0.0.5)
 
 DEPENDENCIES:
   - ChainOneKit-Swift (from `../`)
@@ -23,7 +26,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  ChainOneKit-Swift: 97ad9d956f41bcee7f5d72d25b37ca12438f3cb7
+  ChainOneKit-Swift: 1de2c42f02f09f172bd7001e21d5f924a11da001
 
 PODFILE CHECKSUM: bebd73b3263340beab2adf8c819142213534a536
 
