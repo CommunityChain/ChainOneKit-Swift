@@ -23,10 +23,15 @@ class TemplateControl: UIControl
     
     init() {
         super.init(frame: CGRect.zero)
-        self.initialUI()
+        self.commonInit()
     }
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        self.commonInit()
+    }
+    
+    /// 通用初始化：UI、配置、数据等
+    fileprivate func commonInit() -> Void {
         self.initialUI()
     }
 }
