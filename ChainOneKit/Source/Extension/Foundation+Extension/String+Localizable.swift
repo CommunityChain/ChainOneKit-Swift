@@ -1,9 +1,9 @@
 //
 //  String+Localizable.swift
-//  ProjectTemplate
+//  ChainOneKit
 //
 //  Created by 小唐 on 2019/5/22.
-//  Copyright © 2019 ProjectTemplate. All rights reserved.
+//  Copyright © 2019 ChainOne. All rights reserved.
 //
 //  字符串本地化
 

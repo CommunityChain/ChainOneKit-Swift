@@ -1,6 +1,6 @@
 //
 //  TemplateTableManualCell.swift
-//  ProjectTemplate-Swift
+//  ChainOneKit
 //
 //  Created by 小唐 on 2019/1/18.
 //  Copyright © 2019 ChainOne. All rights reserved.
