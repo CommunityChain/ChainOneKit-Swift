@@ -1,9 +1,9 @@
 //
 //  Double+Extension.swift
-//  CCMall
+//  ChainOneKit
 //
 //  Created by 小唐 on 2019/2/14.
-//  Copyright © 2019 COMC. All rights reserved.
+//  Copyright © 2019 ChainOne. All rights reserved.
 //
 //  小数扩展
 

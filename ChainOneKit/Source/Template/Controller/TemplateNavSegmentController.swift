@@ -3,7 +3,7 @@
 //  SwiftKit-XiaoDe
 //
 //  Created by 小唐 on 2018/10/20.
-//  Copyright © 2018 TangXiaoDe. All rights reserved.
+//  Copyright © 2018 ChainOne. All rights reserved.
 //
 //  导航栏采用UISegmentControl的界面
 

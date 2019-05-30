@@ -3,7 +3,7 @@
 //  SwiftKit-XiaoDe
 //
 //  Created by 小唐 on 25/06/2018.
-//  Copyright © 2018 TangXiaoDe. All rights reserved.
+//  Copyright © 2018 ChainOne. All rights reserved.
 //
 //  UIColor的扩展
 
@@ -36,7 +36,7 @@ public extension UIColor {
     }
 
     // randomColor
-    class func randomColor() -> UIColor {
+    public class func randomColor() -> UIColor {
         let randR = CGFloat(arc4random_uniform(256)) / CGFloat(255.0)
         let randG = CGFloat(arc4random_uniform(256)) / CGFloat(255.0)
         let randB = CGFloat(arc4random_uniform(256)) / CGFloat(255.0)

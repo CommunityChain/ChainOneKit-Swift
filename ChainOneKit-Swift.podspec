@@ -7,7 +7,7 @@ Pod::Spec.new do |spec|
 
   spec.license = 'MIT'
   spec.homepage = 'https://github.com/CommunityChain/ChainOneKit-Swift.git'
-  spec.authors = { 'TangXiaoDe' => 'xiaodehappy@foxmail.com' }
+  spec.authors = { 'ChainOne' => 'xiaodehappy@foxmail.com' }
   spec.source = { :git => 'https://github.com/CommunityChain/ChainOneKit-Swift.git', :tag => '0.0.5' }
 
   spec.platform = :ios, "9.0"

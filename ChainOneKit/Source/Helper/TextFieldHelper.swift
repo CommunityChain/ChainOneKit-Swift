@@ -13,7 +13,7 @@ import UIKit
 public class TextFieldHelper {
 
     // 限制输入框输入长度，用于textField的ValueChanged监听响应
-    class func limitTextField(_ textField: UITextField, withMaxLen maxLen: Int) -> Void {
+    public class func limitTextField(_ textField: UITextField, withMaxLen maxLen: Int) -> Void {
 
         if 0 >= maxLen {
             return

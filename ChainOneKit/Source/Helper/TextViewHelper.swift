@@ -1,9 +1,9 @@
 //
 //  TextViewHelper.swift
-//  CCMall
+//  ChainOneKit
 //
 //  Created by 小唐 on 2019/2/20.
-//  Copyright © 2019 COMC. All rights reserved.
+//  Copyright © 2019 ChainOne. All rights reserved.
 //
 //  UITextView的助手
 
@@ -13,7 +13,7 @@ import UIKit
 public class TextViewHelper {
 
     // 限制输入框输入长度，用于textField的ValueChanged监听响应
-    class func limitTextView(_ textView: UITextView, withMaxLen maxLen: Int) -> Void {
+    public class func limitTextView(_ textView: UITextView, withMaxLen maxLen: Int) -> Void {
 
         if 0 >= maxLen {
             return

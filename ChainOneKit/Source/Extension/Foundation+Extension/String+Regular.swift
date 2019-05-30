@@ -1,9 +1,9 @@
 //
 //  String+Regular.swift
-//  LianYouPin
+//  ChainOneKit
 //
 //  Created by 小唐 on 2019/4/25.
-//  Copyright © 2019 COMC. All rights reserved.
+//  Copyright © 2019 ChainOne. All rights reserved.
 //
 //  String的正则表达式相关扩展
 

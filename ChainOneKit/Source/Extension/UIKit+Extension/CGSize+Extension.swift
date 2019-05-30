@@ -3,7 +3,7 @@
 //  SwiftKit-XiaoDe
 //
 //  Created by 小唐 on 20/06/2018.
-//  Copyright © 2018 TangXiaoDe. All rights reserved.
+//  Copyright © 2018 ChainOne. All rights reserved.
 //
 //  CGSize的扩展
 
@@ -20,7 +20,7 @@ public extension CGSize {
 // MARK: - 等比拉伸
 public extension CGSize {
     /// 对指定尺寸等比拉伸，其中宽拉伸到指定尺寸
-    static func scaleAspectSize(_ size: CGSize, forWidth width: CGFloat) -> CGSize {
+    public static func scaleAspectSize(_ size: CGSize, forWidth width: CGFloat) -> CGSize {
         return size.scaleAspectForWidth(width)
     }
     func scaleAspectForWidth(_ width: CGFloat) -> CGSize {
@@ -35,7 +35,7 @@ public extension CGSize {
     }
 
     /// 对指定尺寸等比拉伸，其中高拉伸到指定尺寸
-    static func scaleAspectSize(_ size: CGSize, forHeight height: CGFloat) -> CGSize {
+    public static func scaleAspectSize(_ size: CGSize, forHeight height: CGFloat) -> CGSize {
         return size.scaleAspectForHeight(height)
     }
     func scaleAspectForHeight(_ height: CGFloat) -> CGSize {

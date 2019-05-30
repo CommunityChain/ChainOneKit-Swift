@@ -3,7 +3,7 @@
 //  SwiftKit-XiaoDe
 //
 //  Created by 小唐 on 20/06/2018.
-//  Copyright © 2018 TangXiaoDe. All rights reserved.
+//  Copyright © 2018 ChainOne. All rights reserved.
 //
 //  UIDevice的扩展
 

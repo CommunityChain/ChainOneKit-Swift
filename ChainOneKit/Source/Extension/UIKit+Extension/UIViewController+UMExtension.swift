@@ -3,7 +3,7 @@
 //  SwiftKit-XiaoDe
 //
 //  Created by 小唐 on 26/03/2018.
-//  Copyright © 2018 TangXiaoDe. All rights reserved.
+//  Copyright © 2018 ChainOne. All rights reserved.
 //
 //  UIViewcontroller里增加UM的的页面统计
 

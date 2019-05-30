@@ -3,7 +3,7 @@
 //  XiaoDeKit-iOS
 //
 //  Created by 小唐 on 05/02/2018.
-//  Copyright © 2018 TangXiaoDe. All rights reserved.
+//  Copyright © 2018 ChainOne. All rights reserved.
 //
 //  文件管理器
 

@@ -1,9 +1,9 @@
 //
 //  StringHelper.swift
-//  LianYouPin
+//  ChainOneKit
 //
 //  Created by 小唐 on 2019/4/11.
-//  Copyright © 2019 COMC. All rights reserved.
+//  Copyright © 2019 ChainOne. All rights reserved.
 //
 //  String 小助手
 
@@ -12,7 +12,7 @@ import Foundation
 public class StringHelper {
     
     /// 是否为空
-    class func isEmpty(for string: String?) -> Bool {
+    public class func isEmpty(for string: String?) -> Bool {
         guard let string = string else {
             return true
         }
@@ -20,7 +20,7 @@ public class StringHelper {
     }
     
     /// 手机号掩码处理 - 中间4位****处理
-    class func phoneMaskProcess(_ phone: String?) -> String? {
+    public class func phoneMaskProcess(_ phone: String?) -> String? {
         guard var phone = phone, !phone.isEmpty else {
             return nil
         }

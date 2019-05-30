@@ -3,7 +3,7 @@
 //  SwiftKit-XiaoDe
 //
 //  Created by 小唐 on 2019/1/10.
-//  Copyright © 2019 TangXiaoDe. All rights reserved.
+//  Copyright © 2019 ChainOne. All rights reserved.
 //
 //  单例模板
 

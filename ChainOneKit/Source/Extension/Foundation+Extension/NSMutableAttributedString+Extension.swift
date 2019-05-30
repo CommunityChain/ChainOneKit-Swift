@@ -1,9 +1,9 @@
 //
 //  NSMutableAttributedString+Extension.swift
-//  CCMall
+//  ChainOneKit
 //
 //  Created by 小唐 on 2019/2/28.
-//  Copyright © 2019 COMC. All rights reserved.
+//  Copyright © 2019 ChainOne. All rights reserved.
 //
 //  NSMutableAttributedString的扩展库
 
@@ -12,7 +12,7 @@ import UIKit
 
 public extension NSMutableAttributedString {
 
-    class func attribute(string: String, font: UIFont?, textColor: UIColor?) -> NSMutableAttributedString {
+    public class func attribute(string: String, font: UIFont?, textColor: UIColor?) -> NSMutableAttributedString {
         var attributes: [NSAttributedString.Key : Any] = [:]
         if let font = font {
             attributes[NSAttributedString.Key.font] = font

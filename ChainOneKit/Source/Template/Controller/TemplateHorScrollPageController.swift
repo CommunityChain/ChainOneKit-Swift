@@ -3,7 +3,7 @@
 //  ProjectTemplate-Swift
 //
 //  Created by 小唐 on 2019/1/18.
-//  Copyright © 2019 TangXiaoDe. All rights reserved.
+//  Copyright © 2019 ChainOne. All rights reserved.
 //
 //  水平的ScroollPage界面模板
 

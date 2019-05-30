@@ -3,7 +3,7 @@
 //  ProjectTemplate-Swift
 //
 //  Created by 小唐 on 2019/3/4.
-//  Copyright © 2019 TangXiaoDe. All rights reserved.
+//  Copyright © 2019 ChainOne. All rights reserved.
 //
 //  嵌套滚动的容器
 //  [注1] 容器内布局 必须使用容器container;

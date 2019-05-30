@@ -3,7 +3,7 @@
 //  SwiftKit-XiaoDe
 //
 //  Created by 小唐 on 13/02/2018.
-//  Copyright © 2018 TangXiaoDe. All rights reserved.
+//  Copyright © 2018 ChainOne. All rights reserved.
 //
 //  UIViewController含有UITableView时的使用模板
 
@@ -83,8 +83,18 @@ extension TemplateTableViewController {
     
 }
 
+// MARK: - Enter Page
+extension TemplateViewController {
+    
+}
+
 // MARK: - Notification
 extension TemplateTableViewController {
+    
+}
+
+// MARK: - Extension
+extension TemplateViewController {
     
 }
 

@@ -3,7 +3,7 @@
 //  SwiftKit-XiaoDe
 //
 //  Created by 小唐 on 13/02/2018.
-//  Copyright © 2018 TangXiaoDe. All rights reserved.
+//  Copyright © 2018 ChainOne. All rights reserved.
 //
 //  UIViewController 的使用模板
 
@@ -88,6 +88,11 @@ extension TemplateViewController {
 }
 
 // MARK: - Event(事件响应)
+extension TemplateViewController {
+    
+}
+
+// MARK: - Enter Page
 extension TemplateViewController {
     
 }

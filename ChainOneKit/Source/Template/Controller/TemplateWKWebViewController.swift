@@ -3,7 +3,7 @@
 //  ProjectTemplate-Swift
 //
 //  Created by 小唐 on 2019/1/11.
-//  Copyright © 2019 TangXiaoDe. All rights reserved.
+//  Copyright © 2019 ChainOne. All rights reserved.
 //
 //  使用WKWebView的控制器模板
 

@@ -3,7 +3,7 @@
 //  ProjectTemplate-Swift
 //
 //  Created by 小唐 on 2019/3/4.
-//  Copyright © 2019 TangXiaoDe. All rights reserved.
+//  Copyright © 2019 ChainOne. All rights reserved.
 //
 //  嵌套的可同时滚动的ScrollView
 //  允许手势和事件通过的UIScrollView
