@@ -26,18 +26,18 @@
 
 import Foundation
 
-public class XDPackageTimer {
+open class XDPackageTimer {
     
     fileprivate weak var target: AnyObject!
     fileprivate var selector: Selector
     
-    public init(target: AnyObject, selector: Selector) {
+    init(target: AnyObject, selector: Selector) {
         self.target = target
         self.selector = selector
     }
     
     /// 类方法提供timer构造
-    public class func timerWithInterval(timeInterval: TimeInterval, target: AnyObject, selector: Selector, userInfo: [String: Any]?, repeats: Bool) -> Timer {
+    open class func timerWithInterval(timeInterval: TimeInterval, target: AnyObject, selector: Selector, userInfo: [String: Any]?, repeats: Bool) -> Timer {
         let packageTimer = XDPackageTimer.init(target: target, selector: selector)
         let timer = Timer.scheduledTimer(timeInterval: timeInterval, target: packageTimer, selector: #selector(timerd(_:)), userInfo: userInfo, repeats: repeats)
         return timer

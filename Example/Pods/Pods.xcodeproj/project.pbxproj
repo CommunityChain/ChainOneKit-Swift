@@ -32,6 +32,7 @@
 		4C56CC2259E4093DA7BD0E54BD5E2A45 /* TemplateWebViewSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE8ABA8840C5AE1E6DD9C533BFD31F5 /* TemplateWebViewSource.swift */; };
 		50E34CF433654BCA2AC8AF53D8034F13 /* TemplateWKWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932582C1402B23C499B7E15E92BCB46E /* TemplateWKWebViewController.swift */; };
 		52D85A1A7D1A15F625199C82F6BDE3BB /* TemplateMJRefreshTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F501B05314EFDE4EBF282E7AAFE0CB /* TemplateMJRefreshTableView.swift */; };
+		536A5AD8229FE89800774B8E /* ChainOneHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536A5AD7229FE89800774B8E /* ChainOneHelper.swift */; };
 		5400843B64786FA1428C07AFB6E1EFE7 /* TemplateSingleInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D2426CCD7955ACB15273C738306B3E /* TemplateSingleInstance.swift */; };
 		58B0D58B6012832180E6186F51EB801D /* TemplateHorScrollPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B0F080C7B95BEC15E97E98C788723F /* TemplateHorScrollPageController.swift */; };
 		5CD4C53D2633E1CF6679BF5115347398 /* TemplateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A6D2C78004A118F8BD6EC009C4B7AC /* TemplateTableViewController.swift */; };
@@ -100,7 +101,7 @@
 		0078C327D4B921FEAA36D14C6323858A /* Pods-ChainOneKitTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ChainOneKitTests-dummy.m"; sourceTree = "<group>"; };
 		092CD2A59C42391261362C208B96C87F /* TextFieldHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextFieldHelper.swift; path = ChainOneKit/Source/Helper/TextFieldHelper.swift; sourceTree = "<group>"; };
 		0B16F5D76943C2DC6387A551E5BD8E38 /* TemplateTableHeaderFooterView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TemplateTableHeaderFooterView.swift; sourceTree = "<group>"; };
-		0BF385B82FDA57DEBA00887E0603289F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		0BF385B82FDA57DEBA00887E0603289F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		13F33F0602FDC84A54A5908BA02BE096 /* TemplateMJRefreshHeader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TemplateMJRefreshHeader.swift; sourceTree = "<group>"; };
 		13FA4F540697F8A79D89EE9A5EFEDC29 /* TemplatePresentedController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TemplatePresentedController.swift; sourceTree = "<group>"; };
 		17695A3FC2D7A11FAC159F89C5A1F89B /* TemplateRealmModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TemplateRealmModel.swift; sourceTree = "<group>"; };
@@ -124,6 +125,7 @@
 		515B8354280C7A9D36A09B5E5F5B6DB2 /* TemplateManualView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TemplateManualView.swift; sourceTree = "<group>"; };
 		52A6D2C78004A118F8BD6EC009C4B7AC /* TemplateTableViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TemplateTableViewController.swift; sourceTree = "<group>"; };
 		53510E4C617E0DA4D5EA404C4D5D64F7 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIImageView+Extension.swift"; path = "ChainOneKit/Source/Extension/UIKit+Extension/UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		536A5AD7229FE89800774B8E /* ChainOneHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChainOneHelper.swift; sourceTree = "<group>"; };
 		542AC14B01A00E119C44058B986CF340 /* Pods-ChainOneKit-Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ChainOneKit-Example-frameworks.sh"; sourceTree = "<group>"; };
 		56B044D24F8719D99BFECB24903D65AE /* Pods-ChainOneKit-Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ChainOneKit-Example-Info.plist"; sourceTree = "<group>"; };
 		59F3D8DF00287286D75552456A1C23CC /* TemplateUIWebViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TemplateUIWebViewController.swift; sourceTree = "<group>"; };
@@ -132,7 +134,7 @@
 		65002C0B21E577349BFC7B6CF67EADB1 /* Pods-ChainOneKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ChainOneKitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		678BDF892907A22B9049029D3457219C /* TemplateTableHeaderView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TemplateTableHeaderView.swift; sourceTree = "<group>"; };
 		6E6C232BD91987394391AEA34C858F0B /* XDNestScrollView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XDNestScrollView.swift; path = ChainOneKit/Source/XDNestView/XDNestScrollView.swift; sourceTree = "<group>"; };
-		7046E2EF09EAA3DFCE5DCA00E68BB02A /* Pods_ChainOneKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ChainOneKit_Example.framework; path = "Pods-ChainOneKit-Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7046E2EF09EAA3DFCE5DCA00E68BB02A /* Pods_ChainOneKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChainOneKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71B58F1027A6E79CBAB727D2138AFF3F /* UIViewController+UMExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewController+UMExtension.swift"; path = "ChainOneKit/Source/Extension/UIKit+Extension/UIViewController+UMExtension.swift"; sourceTree = "<group>"; };
 		72B69565040389CAAE0BD167BE53A5A1 /* UIDevice+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIDevice+Extension.swift"; path = "ChainOneKit/Source/Extension/UIKit+Extension/UIDevice+Extension.swift"; sourceTree = "<group>"; };
 		755E5682AD4EA1109BF8EB36289E0AE3 /* ChainOneKit-Swift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "ChainOneKit-Swift.xcconfig"; sourceTree = "<group>"; };
@@ -142,12 +144,12 @@
 		8836D6A6C5303E7425B0CECA272CAC5C /* TemplateControl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TemplateControl.swift; sourceTree = "<group>"; };
 		8B4B2A5A604EA4A232A3C74FC3C56127 /* TemplateListView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TemplateListView.swift; sourceTree = "<group>"; };
 		932582C1402B23C499B7E15E92BCB46E /* TemplateWKWebViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TemplateWKWebViewController.swift; sourceTree = "<group>"; };
-		94296083F782672576F9510BD136F804 /* ChainOneKit-Swift.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = "ChainOneKit-Swift.podspec"; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		94296083F782672576F9510BD136F804 /* ChainOneKit-Swift.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = "ChainOneKit-Swift.podspec"; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		97D8E9F69066B30A5330C1F9B35A1D39 /* Pods-ChainOneKitTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ChainOneKitTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		9AC77DC755630E5180EB20710F1122A5 /* TemplateViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TemplateViewController.swift; sourceTree = "<group>"; };
 		9AD1F150069C869E2CA992E2A187CFDB /* TemplateXibView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TemplateXibView.swift; sourceTree = "<group>"; };
 		9BEBBA186FF44B7C352E7EB4009DA121 /* Double+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Double+Extension.swift"; path = "ChainOneKit/Source/Extension/Foundation+Extension/Double+Extension.swift"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9EBA68E259A0DA04DF72C747042BCFEF /* TextViewHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextViewHelper.swift; path = ChainOneKit/Source/Helper/TextViewHelper.swift; sourceTree = "<group>"; };
 		A2D2426CCD7955ACB15273C738306B3E /* TemplateSingleInstance.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TemplateSingleInstance.swift; sourceTree = "<group>"; };
 		A6B441A81568E6DCD9B27769A1AB4180 /* NSAttributedString+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSAttributedString+Extension.swift"; path = "ChainOneKit/Source/Extension/Foundation+Extension/NSAttributedString+Extension.swift"; sourceTree = "<group>"; };
@@ -171,7 +173,7 @@
 		CCB91DE4C4D8187448E0E548A43CFEDD /* Date+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Date+Extension.swift"; path = "ChainOneKit/Source/Extension/Foundation+Extension/Date+Extension.swift"; sourceTree = "<group>"; };
 		CDE198CD1B8A1BC2455B9A565BED66F7 /* TemplateCollectionViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TemplateCollectionViewController.swift; sourceTree = "<group>"; };
 		D2005A87C50B0C84D6606606347458A2 /* UIColor+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIColor+Extension.swift"; path = "ChainOneKit/Source/Extension/UIKit+Extension/UIColor+Extension.swift"; sourceTree = "<group>"; };
-		D3BC9F708F2FA460AD5D346BE65FBFD3 /* Pods_ChainOneKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ChainOneKitTests.framework; path = "Pods-ChainOneKitTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3BC9F708F2FA460AD5D346BE65FBFD3 /* Pods_ChainOneKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChainOneKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D67E6ECA9DC175F1CF2D946E1C8139D1 /* Timer+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Timer+Extension.swift"; path = "ChainOneKit/Source/Extension/Foundation+Extension/Timer+Extension.swift"; sourceTree = "<group>"; };
 		D9C2284CEB58B52C84AB24DF15EB0AD8 /* Pods-ChainOneKitTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ChainOneKitTests.modulemap"; sourceTree = "<group>"; };
 		DAB8BE010BB5671C76544DBA15A3138F /* TemplateTableManualCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TemplateTableManualCell.swift; sourceTree = "<group>"; };
@@ -180,14 +182,14 @@
 		E1EAEC5D09009B781507410DE23A13E2 /* TemplateTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TemplateTableViewCell.swift; sourceTree = "<group>"; };
 		E31C34931678F60F3EDD5627B7993D09 /* XDPackageTimer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XDPackageTimer.swift; path = ChainOneKit/Source/XDPackageTimer/XDPackageTimer.swift; sourceTree = "<group>"; };
 		E452CDCB107A2FEBB04769E211FDB30E /* TemplateBaseTableViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TemplateBaseTableViewController.swift; sourceTree = "<group>"; };
-		EBF07BA9BD8250537C3D9425AFEBD3A1 /* ChainOneKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ChainOneKit.framework; path = "ChainOneKit-Swift.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBF07BA9BD8250537C3D9425AFEBD3A1 /* ChainOneKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ChainOneKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F20A37E7B56C0B4349ACEAAD78AF369B /* TemplateMultiNavTitleController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TemplateMultiNavTitleController.swift; sourceTree = "<group>"; };
 		F3B41E41F800E056C46B5CDD4F76942F /* Pods-ChainOneKit-Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ChainOneKit-Example.modulemap"; sourceTree = "<group>"; };
 		F82312C4CBFE3C9624782B5AB7683DE0 /* UIView+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Extension.swift"; path = "ChainOneKit/Source/Extension/UIKit+Extension/UIView+Extension.swift"; sourceTree = "<group>"; };
 		F8AF477A80C300A07D6EB0DA4C8CA176 /* Pods-ChainOneKit-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ChainOneKit-Example.release.xcconfig"; sourceTree = "<group>"; };
 		FB964CC5F71998767218BF2A5AB07F05 /* UIButton+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIButton+Extension.swift"; path = "ChainOneKit/Source/Extension/UIKit+Extension/UIButton+Extension.swift"; sourceTree = "<group>"; };
 		FCE337C72B442164158E9023586B9A4C /* ChainOneKit-Swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ChainOneKit-Swift-dummy.m"; sourceTree = "<group>"; };
-		FE6B9C5981237EFCCE5C267777A75712 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		FE6B9C5981237EFCCE5C267777A75712 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		FF496D4FFF6E7496645ADD3B30A97276 /* TemplateCollectionViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TemplateCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -387,6 +389,7 @@
 				AD8DC9FCBF8ADBFC8AF9C7CA1987130A /* StringHelper.swift */,
 				092CD2A59C42391261362C208B96C87F /* TextFieldHelper.swift */,
 				9EBA68E259A0DA04DF72C747042BCFEF /* TextViewHelper.swift */,
+				536A5AD7229FE89800774B8E /* ChainOneHelper.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -708,6 +711,7 @@
 				2CAB1DA3BFC7141B6F98076C3A12E922 /* UINavigationController+Extension.swift in Sources */,
 				990989F4A55FAC726478A7F29BD854D4 /* UITabBar+Extension.swift in Sources */,
 				24A6EEA589A71A804E0D7FF65092BC76 /* UITextField+Extension.swift in Sources */,
+				536A5AD8229FE89800774B8E /* ChainOneHelper.swift in Sources */,
 				3EAC48043DF4310E555C162B54506FB2 /* UIView+Extension.swift in Sources */,
 				C38637516C9C83EE79E8951003AA90E9 /* UIViewController+Extension.swift in Sources */,
 				05E0A66FAAC5E0DB597760D87C787393 /* UIViewController+UMExtension.swift in Sources */,

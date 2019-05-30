@@ -10,12 +10,12 @@
 
 import UIKit
 
-typealias XDNestingScrollableScrollView = XDNestScrollView
-typealias XDNestingScrollScrollView = XDNestScrollView
-public class XDNestScrollView: UIScrollView {
+public typealias XDNestingScrollableScrollView = XDNestScrollView
+public typealias XDNestingScrollScrollView = XDNestScrollView
+open class XDNestScrollView: UIScrollView {
 
     // UIWebView/UIScrollView
-    var allowViews: [UIView] = []
+    open var allowViews: [UIView] = []
 
     init() {
         super.init(frame: CGRect.zero)
@@ -25,7 +25,7 @@ public class XDNestScrollView: UIScrollView {
         super.init(frame: frame)
         self.commonInit()
     }
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
 

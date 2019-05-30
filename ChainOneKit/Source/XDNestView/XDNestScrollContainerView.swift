@@ -26,18 +26,18 @@ public protocol XDNestScrollContainerViewProtocol: class {
 }
 
 /// 嵌套滚动的容器，容器内布局 必须使用容器container
-public class XDNestScrollContainerView: UIView {
+open class XDNestScrollContainerView: UIView {
 
-    let container: XDNestScrollView = XDNestScrollView()
+    public let container: XDNestScrollView = XDNestScrollView()
 
-    var containerScrollHeight: CGFloat = 250
+    open var containerScrollHeight: CGFloat = 250
 
-    weak var delegate: XDNestScrollContainerViewProtocol?
+    open weak var delegate: XDNestScrollContainerViewProtocol?
 
-    var canScroll: Bool = true
+    open var canScroll: Bool = true
 
     // UIWebView/UIScrollView
-    var allowViews: [UIView] = [] {
+    open var allowViews: [UIView] = [] {
         didSet {
             self.container.allowViews = allowViews
         }
@@ -51,13 +51,13 @@ public class XDNestScrollContainerView: UIView {
         super.init(frame: frame)
         self.initialUI()
     }
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.initialUI()
     }
 
 }
-extension XDNestScrollContainerView {
+public extension XDNestScrollContainerView {
     func initialUI() -> Void {
         self.addSubview(self.container)
         self.container.delegate = self

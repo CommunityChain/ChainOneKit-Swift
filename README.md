@@ -17,6 +17,15 @@ pod 'ChainOneKit-Swift', :git => 'https://github.com/CommunityChain/ChainOneKit-
  
 * 类本身的权限作为内部的默认权限？ 
 
+* open的使用
+
+* 导入问题
+```
+ChainOneKit库每次使用需单独导入的问题解决
+该问题待确认，但目前Constant.swift和XDPackageTimer.swift是需要单独引入该库的;
+但对于extension之类的无需再次导入
+```
+
 
 
 

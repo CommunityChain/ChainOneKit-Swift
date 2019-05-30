@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import ChainOneKit
 
 class TestViewController: UIViewController {
 
@@ -15,7 +14,6 @@ class TestViewController: UIViewController {
         super.viewDidLoad()
         
         
-        CGSize.max
         
         
     }

@@ -10,10 +10,10 @@
 import Foundation
 import UIKit
 
-public class TextViewHelper {
+open class TextViewHelper {
 
     // 限制输入框输入长度，用于textField的ValueChanged监听响应
-    public class func limitTextView(_ textView: UITextView, withMaxLen maxLen: Int) -> Void {
+    open class func limitTextView(_ textView: UITextView, withMaxLen maxLen: Int) -> Void {
 
         if 0 >= maxLen {
             return

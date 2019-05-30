@@ -5,18 +5,9 @@
 //  Created by 小唐 on 2018/8/2.
 //  Copyright © 2018 ChainOne. All rights reserved.
 //
+//  CGFloat的扩展
 
 import Foundation
-import UIKit
-
-public class XDHelper {
-
-    public class func round(_ value: CGFloat) -> CGFloat {
-//        return CGFloat(round(value))
-        return 0
-    }
-
-}
 
 public extension CGFloat {
 

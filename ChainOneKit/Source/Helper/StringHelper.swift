@@ -9,10 +9,10 @@
 
 import Foundation
 
-public class StringHelper {
+open class StringHelper {
     
     /// 是否为空
-    public class func isEmpty(for string: String?) -> Bool {
+    open class func isEmpty(for string: String?) -> Bool {
         guard let string = string else {
             return true
         }
@@ -20,7 +20,7 @@ public class StringHelper {
     }
     
     /// 手机号掩码处理 - 中间4位****处理
-    public class func phoneMaskProcess(_ phone: String?) -> String? {
+    open class func phoneMaskProcess(_ phone: String?) -> String? {
         guard var phone = phone, !phone.isEmpty else {
             return nil
         }
