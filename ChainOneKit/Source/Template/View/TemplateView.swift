@@ -37,7 +37,7 @@ class TemplateView: UIView {
     fileprivate func commonInit() -> Void {
         self.initialUI()
     }
-
+    
 }
 
 // MARK: - Internal Function
@@ -53,10 +53,17 @@ extension TemplateView {
         super.awakeFromNib()
         self.initialInAwakeNib()
     }
+    
+    /// 布局子控件
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+    }
+    
 }
 // MARK: - Private UI 手动布局
 extension TemplateView {
-
+    
     /// 界面布局
     fileprivate func initialUI() -> Void {
         self.addSubview(self.mainView)
@@ -68,7 +75,7 @@ extension TemplateView {
     fileprivate func initialMainView(_ mainView: UIView) -> Void {
         
     }
-
+    
 }
 // MARK: - Private UI Xib加载后处理
 extension TemplateView {
@@ -99,4 +106,5 @@ extension TemplateView {
 extension TemplateView {
     
 }
+
 

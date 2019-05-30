@@ -31,6 +31,10 @@ class TemplateTableViewController: UIViewController
         //fatalError("init(coder:) has not been implemented")
     }
     
+    //    /// injection回调
+    //    @objc func injected() -> Void {
+    //        self.viewDidLoad()
+    //    }
 }
 
 // MARK: - Internal Function
@@ -58,6 +62,9 @@ extension TemplateTableViewController {
         tableView.tableFooterView = UIView()
         tableView.estimatedRowHeight = 250
         tableView.showsVerticalScrollIndicator = false
+        //tableView.mj_header =
+        //tableView.mj_footer =
+        //tableView.mj_footer.isHidden = true
         tableView.frame = self.view.bounds
 //        tableView.snp.makeConstraints { (make) in
 //            make.edges.equalToSuperview()

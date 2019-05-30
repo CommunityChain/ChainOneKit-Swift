@@ -26,10 +26,10 @@ class TemplateViewController: UIViewController
         //fatalError("init(coder:) has not been implemented")
     }
     
-//    /// injection回调
-//    @objc func injected() -> Void {
-//        self.viewDidLoad()
-//    }
+    //    /// injection回调
+    //    @objc func injected() -> Void {
+    //        self.viewDidLoad()
+    //    }
 }
 
 // MARK: - Internal Function
@@ -42,12 +42,32 @@ extension TemplateViewController {
         self.initialDataSource()
     }
     
+    /// 控制器的view将要显示
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
+    /// 控制器的view将要布局子控件
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+    }
+    /// 控制器的view布局子控件完成
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+    }
+    /// 控制器的view完全显示
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    /// 控制器的view即将消失
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
     }
+    /// 控制器的view完全消失
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+    }
+    
+    // MARK: - 状态栏显示隐藏
     
     // 隐藏状态栏
     override var prefersStatusBarHidden: Bool {
@@ -68,14 +88,14 @@ extension TemplateViewController {
     override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
         return UIInterfaceOrientation.landscapeLeft
     }
-
+    
 }
 
 // MARK: - UI
 extension TemplateViewController {
     /// 页面布局
     fileprivate func initialUI() -> Void {
-        self.view.backgroundColor = UIColor.white        
+        self.view.backgroundColor = UIColor.white
     }
 }
 

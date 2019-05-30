@@ -56,11 +56,11 @@ class TemplateUIWebViewController: UIViewController
         //super.init(coder: aDecoder)
         fatalError("init(coder:) has not been implemented")
     }
-    
-    /// injection回调
-    @objc func injected() -> Void {
-        self.viewDidLoad()
-    }
+
+    //    /// injection回调
+    //    @objc func injected() -> Void {
+    //        self.viewDidLoad()
+    //    }
 }
 
 // MARK: - Internal Function
