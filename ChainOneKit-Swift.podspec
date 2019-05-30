@@ -2,13 +2,13 @@ Pod::Spec.new do |spec|
 
   spec.name = 'ChainOneKit-Swift'
   spec.module_name = 'ChainOneKit'
-  spec.version = '0.0.5'
+  spec.version = '0.0.6'
   spec.summary = 'the kit for ChainOne in swift'
 
   spec.license = 'MIT'
   spec.homepage = 'https://github.com/CommunityChain/ChainOneKit-Swift.git'
   spec.authors = { 'ChainOne' => 'xiaodehappy@foxmail.com' }
-  spec.source = { :git => 'https://github.com/CommunityChain/ChainOneKit-Swift.git', :tag => '0.0.5' }
+  spec.source = { :git => 'https://github.com/CommunityChain/ChainOneKit-Swift.git', :tag => '0.0.6' }
 
   spec.platform = :ios, "9.0"
 
