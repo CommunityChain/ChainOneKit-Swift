@@ -10,17 +10,18 @@
 import Foundation
 import UIKit
 
-public extension CGSize {
+extension CGSize {
 
     /// 宽高都为最大值的尺寸
-    static let max: CGSize = CGSize(width: CGFloat(MAXFLOAT), height: CGFloat(MAXFLOAT))
+    public static let max: CGSize = CGSize(width: CGFloat(MAXFLOAT), height: CGFloat(MAXFLOAT))
+    
 
 }
 
 // MARK: - 等比拉伸
 public extension CGSize {
     /// 对指定尺寸等比拉伸，其中宽拉伸到指定尺寸
-    public static func scaleAspectSize(_ size: CGSize, forWidth width: CGFloat) -> CGSize {
+    internal static func scaleAspectSize(_ size: CGSize, forWidth width: CGFloat) -> CGSize {
         return size.scaleAspectForWidth(width)
     }
     func scaleAspectForWidth(_ width: CGFloat) -> CGSize {
@@ -35,7 +36,7 @@ public extension CGSize {
     }
 
     /// 对指定尺寸等比拉伸，其中高拉伸到指定尺寸
-    public static func scaleAspectSize(_ size: CGSize, forHeight height: CGFloat) -> CGSize {
+    static func scaleAspectSize(_ size: CGSize, forHeight height: CGFloat) -> CGSize {
         return size.scaleAspectForHeight(height)
     }
     func scaleAspectForHeight(_ height: CGFloat) -> CGSize {

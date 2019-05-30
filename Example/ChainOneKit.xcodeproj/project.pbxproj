@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4BFE2689EA95FC8083FC39CD /* Pods_ChainOneKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A39F19D6CF5E3B2B36349DA9 /* Pods_ChainOneKitTests.framework */; };
+		531E7F02229F6E0C0066212D /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531E7F01229F6E0C0066212D /* TestViewController.swift */; };
 		53702E4E228E4BEC004BD880 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53702E4D228E4BEC004BD880 /* AppDelegate.swift */; };
 		53702E50228E4BEC004BD880 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53702E4F228E4BEC004BD880 /* ViewController.swift */; };
 		53702E53228E4BEC004BD880 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53702E51228E4BEC004BD880 /* Main.storyboard */; };
@@ -38,6 +39,8 @@
 /* Begin PBXFileReference section */
 		0EAB428E8DDD70DFE5BBEE12 /* Pods-ChainOneKit-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChainOneKit-Example.debug.xcconfig"; path = "Target Support Files/Pods-ChainOneKit-Example/Pods-ChainOneKit-Example.debug.xcconfig"; sourceTree = "<group>"; };
 		323C23A3E6FFE2501C163644 /* Pods-ChainOneKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChainOneKitTests.release.xcconfig"; path = "Target Support Files/Pods-ChainOneKitTests/Pods-ChainOneKitTests.release.xcconfig"; sourceTree = "<group>"; };
+		531E7F01229F6E0C0066212D /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		531E7F03229F6E6D0066212D /* ChainOneKitPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChainOneKitPrefixHeader.pch; sourceTree = "<group>"; };
 		53702E4A228E4BEC004BD880 /* ChainOneKit-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ChainOneKit-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		53702E4D228E4BEC004BD880 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53702E4F228E4BEC004BD880 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -120,10 +123,12 @@
 			children = (
 				53702E4D228E4BEC004BD880 /* AppDelegate.swift */,
 				53702E4F228E4BEC004BD880 /* ViewController.swift */,
+				531E7F01229F6E0C0066212D /* TestViewController.swift */,
 				53702E51228E4BEC004BD880 /* Main.storyboard */,
 				53702E54228E4BED004BD880 /* Assets.xcassets */,
 				53702E56228E4BED004BD880 /* LaunchScreen.storyboard */,
 				53702E59228E4BED004BD880 /* Info.plist */,
+				531E7F03229F6E6D0066212D /* ChainOneKitPrefixHeader.pch */,
 			);
 			path = ChainOneKit;
 			sourceTree = "<group>";
@@ -154,7 +159,6 @@
 				B306F52D96F71BF460468719 /* Pods-ChainOneKitTests.debug.xcconfig */,
 				323C23A3E6FFE2501C163644 /* Pods-ChainOneKitTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -362,6 +366,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				53702E50228E4BEC004BD880 /* ViewController.swift in Sources */,
+				531E7F02229F6E0C0066212D /* TestViewController.swift in Sources */,
 				53702E4E228E4BEC004BD880 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -539,6 +544,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PREFIX_HEADER = ChainOneKit/ChainOneKitPrefixHeader.pch;
 				INFOPLIST_FILE = ChainOneKit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -557,6 +563,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PREFIX_HEADER = ChainOneKit/ChainOneKitPrefixHeader.pch;
 				INFOPLIST_FILE = ChainOneKit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -36,7 +36,7 @@ public extension UIColor {
     }
 
     // randomColor
-    public class func randomColor() -> UIColor {
+    class func randomColor() -> UIColor {
         let randR = CGFloat(arc4random_uniform(256)) / CGFloat(255.0)
         let randG = CGFloat(arc4random_uniform(256)) / CGFloat(255.0)
         let randB = CGFloat(arc4random_uniform(256)) / CGFloat(255.0)

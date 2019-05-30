@@ -1,0 +1,19 @@
+//
+//  ChainOneKitPrefixHeader.pch
+//  ChainOneKit
+//
+//  Created by 小唐 on 2019/5/30.
+//  Copyright © 2019 ChainOne. All rights reserved.
+//
+
+#ifndef ChainOneKitPrefixHeader_pch
+#define ChainOneKitPrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+
+#import <ChainOneKit/ChainOneKit-Swift.h>
+
+
+#endif /* ChainOneKitPrefixHeader_pch */

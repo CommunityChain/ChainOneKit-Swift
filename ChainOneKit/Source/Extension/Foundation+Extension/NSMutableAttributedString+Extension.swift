@@ -12,7 +12,7 @@ import UIKit
 
 public extension NSMutableAttributedString {
 
-    public class func attribute(string: String, font: UIFont?, textColor: UIColor?) -> NSMutableAttributedString {
+    class func attribute(string: String, font: UIFont?, textColor: UIColor?) -> NSMutableAttributedString {
         var attributes: [NSAttributedString.Key : Any] = [:]
         if let font = font {
             attributes[NSAttributedString.Key.font] = font

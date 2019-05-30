@@ -25,12 +25,12 @@ public extension UINavigationController {
     }
 
     /// 隐藏导航栏上的阴影 —— 所有导航控制器
-    public class func hiddenNavBarShadow() -> Void {
+    class func hiddenNavBarShadow() -> Void {
         let navigationBar = UINavigationBar.appearance()
         navigationBar.shadowImage = UIImage()
     }
     /// 显示导航栏上的阴影 —— 所有导航控制器
-    public class func showNavBarShadow(color: UIColor = UIColor(hex: 0xcccccc)) -> Void {
+    class func showNavBarShadow(color: UIColor = UIColor(hex: 0xcccccc)) -> Void {
         let navigationBar = UINavigationBar.appearance()
         navigationBar.shadowImage = UIImage.imageWithColor(color)
     }
@@ -51,7 +51,7 @@ public extension UINavigationController {
         navigationBar.shadowImage = UIImage.imageWithColor(shadowColor)
     }
     /// 导航栏主题设置 - 对所有的导航控制器
-    public class func setNavBarTheme(titleFont: UIFont, titleColor: UIColor, tintColor: UIColor, barTintColor: UIColor, isTranslucent: Bool = false, bgImage: UIImage = UIImage(), shadowColor: UIColor = UIColor.clear) -> Void {
+    class func setNavBarTheme(titleFont: UIFont, titleColor: UIColor, tintColor: UIColor, barTintColor: UIColor, isTranslucent: Bool = false, bgImage: UIImage = UIImage(), shadowColor: UIColor = UIColor.clear) -> Void {
         let navigationBar = UINavigationBar.appearance()
         let navBarTitleAtts = [NSAttributedString.Key.foregroundColor: titleColor, NSAttributedString.Key.font: titleFont]
         navigationBar.titleTextAttributes = navBarTitleAtts

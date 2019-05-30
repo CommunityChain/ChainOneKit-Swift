@@ -1,3 +1,27 @@
+## Usaing
+```
+pod 'ChainOneKit-Swift', :git => 'https://github.com/CommunityChain/ChainOneKit-Swift.git', :tag => '0.0.6'
+```
+
+
+## 关于三方库中访问修饰符的限定
+
+* 对于Foundation库、UIKit库等库中的类进行扩展时，有2种修饰方式：
+ 1. extension使用public修饰，内部对外的方法(class方法、static方法、实例方法)和计算属性默认为public类型，无需再次添加public修饰；
+ 2. extension不作任何修饰，内部对外的方法和计算属性使用public修饰；
+
+* 自定义的类
+ 1. class需使用public修饰，且内部的class类型或static类型的也需使用public修饰；
+ 2. ...
+
+ 
+* 类本身的权限作为内部的默认权限？ 
+
+
+
+
+
+
 pod-template
 ============
 

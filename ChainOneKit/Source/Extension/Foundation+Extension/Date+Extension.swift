@@ -39,7 +39,7 @@ public extension Date {
 
 public extension Date {
 
-    public static func dateWithString(_ dateString: String, format: String = "yyyy-MM-dd HH:mm:ss", timeZone: TimeZone? = TimeZone.current) -> Date? {
+    static func dateWithString(_ dateString: String, format: String = "yyyy-MM-dd HH:mm:ss", timeZone: TimeZone? = TimeZone.current) -> Date? {
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = timeZone
         dateFormatter.dateFormat = format
