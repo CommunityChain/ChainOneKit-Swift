@@ -24,12 +24,11 @@ Pod::Spec.new do |spec|
     constant.source_files = 'ChainOneKit/Source/Constant/**/*'
     constant.dependency 'ChainOneKit-Swift/UIKitExtension'
   end
-  spec.subspec "Template" do |template|
-    template.source_files = 'ChainOneKit/Source/Template/Controller/**/*',
-      'ChainOneKit/Source/Template/View/**/*',
-      'ChainOneKit/Source/Template/Vender/**/*',
-      'ChainOneKit/Source/Template/Other/**/*'
-    template.dependency 'ChainOneKit-Swift/Constant'
+  spec.subspec "Common" do |common|
+    common.source_files = 'ChainOneKit/Source/Common/View/**/*'
+    common.dependency 'ChainOneKit-Swift/FoundationExtension'
+    common.dependency 'ChainOneKit-Swift/UIKitExtension'
+    common.dependency 'ChainOneKit-Swift/Constant'
   end
   spec.subspec "XDPackageTimer" do |timer|
     timer.source_files = 'ChainOneKit/Source/XDPackageTimer/**/*'
@@ -41,5 +40,16 @@ Pod::Spec.new do |spec|
     helper.source_files = 'ChainOneKit/Source/Helper/**/*'
     helper.dependency 'ChainOneKit-Swift/FoundationExtension'
   end
+  spec.subspec "XDWeb" do |web|
+    web.source_files = 'ChainOneKit/Source/XDWeb/**/*'
+  end
+  spec.subspec "Template" do |template|
+    template.source_files = 'ChainOneKit/Source/Template/Controller/**/*',
+    'ChainOneKit/Source/Template/View/**/*',
+    'ChainOneKit/Source/Template/Vender/**/*',
+    'ChainOneKit/Source/Template/Other/**/*'
+    template.dependency 'ChainOneKit-Swift/Constant'
+  end
+
 
 end
