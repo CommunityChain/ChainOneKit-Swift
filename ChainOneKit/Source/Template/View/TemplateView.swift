@@ -14,6 +14,13 @@ class TemplateView: UIView {
     
     // MARK: - Internal Property
     
+    var model: String? {
+        didSet {
+            self.setupWithModel(model)
+        }
+    }
+    
+    
     // MARK: - Private Property
     
     fileprivate let mainView: UIView = UIView()
@@ -34,7 +41,7 @@ class TemplateView: UIView {
     }
     
     /// 通用初始化：UI、配置、数据等
-    fileprivate func commonInit() -> Void {
+    func commonInit() -> Void {
         self.initialUI()
     }
     
@@ -87,6 +94,13 @@ extension TemplateView {
 
 // MARK: - Data Function
 extension TemplateView {
+    /// 数据加载
+    fileprivate func setupWithModel(_ model: String?) -> Void {
+        guard let _ = model else {
+            return
+        }
+        // 子控件数据加载
+    }
     
 }
 

@@ -14,10 +14,25 @@ class TemplateControl: UIControl
 {
     
     // MARK: - Internal Property
-
-    static var viewHeight: CGFloat = 44
+    
+    static let viewHeight: CGFloat = 56
+    
+    var model: (icon: UIImage?, title: String)? = nil {
+        didSet {
+            self.setupWithModel(model)
+        }
+    }
+    
+    let titleLabel: UILabel = UILabel()
+    let iconView: UIImageView = UIImageView()
     
     // MARK: - Private Property
+    
+    /// icon.centerX的左侧间距
+    fileprivate let iconCenterXLeftMargin: CGFloat = 30
+    /// title.left的左侧间距(与父视图)
+    fileprivate let titleLeftMargin: CGFloat = 52
+    
     
     // MARK: - Initialize Function
     
@@ -44,11 +59,34 @@ class TemplateControl: UIControl
 extension TemplateControl {
     /// 界面布局
     fileprivate func initialUI() -> Void {
-        
+        self.backgroundColor = UIColor.white
+        // 1. iconView
+        self.addSubview(self.iconView)
+        //self.iconView.snp.makeConstraints { (make) in
+        //    make.centerY.equalToSuperview()
+        //    make.centerX.equalTo(self.snp.leading).offset(self.iconCenterXLeftMargin)
+        //}
+        // 2. titleLabel
+        self.addSubview(self.titleLabel)
+        self.titleLabel.set(text: nil, font: UIFont.systemFont(ofSize: 16), textColor: UIColor.darkGray)
+        //self.titleLabel.snp.makeConstraints { (make) in
+        //    make.centerY.trailing.equalToSuperview()
+        //    make.leading.equalToSuperview().offset(self.titleLeftMargin)
+        //}
     }
 }
 
 // MARK: - Private  数据(处理 与 加载)
+extension TemplateControl {
+    /// 数据加载
+    fileprivate func setupWithModel(_ model: (icon: UIImage?, title: String)?) -> Void {
+        guard let model = model else {
+            return
+        }
+        self.iconView.image = model.icon
+        self.titleLabel.text = model.title
+    }
+}
 
 // MARK: - Private  事件
 

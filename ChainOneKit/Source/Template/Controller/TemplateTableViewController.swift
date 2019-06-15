@@ -91,7 +91,7 @@ extension TemplateTableViewController {
 }
 
 // MARK: - Enter Page
-extension TemplateViewController {
+extension TemplateTableViewController {
     
 }
 
@@ -101,7 +101,7 @@ extension TemplateTableViewController {
 }
 
 // MARK: - Extension
-extension TemplateViewController {
+extension TemplateTableViewController {
     
 }
 

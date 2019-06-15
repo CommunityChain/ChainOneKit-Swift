@@ -14,6 +14,7 @@ class TemplateCollectionReusableView: UICollectionReusableView {
     
     // MARK: - Internal Property
     
+    static let headerHeight: CGFloat = 32
     static let identifier: String = "TemplateCollectionReusableViewReusableIdentifier"
     
     var model: String? {
