@@ -1,21 +1,21 @@
 {
   "name": "ChainOneKit-Swift",
   "module_name": "ChainOneKit",
-  "version": "0.0.5",
-  "summary": "the kit for ChainOne in swift",
+  "version": "0.0.8",
+  "summary": "the kit for ChainOne in Swift",
   "license": "MIT",
   "homepage": "https://github.com/CommunityChain/ChainOneKit-Swift.git",
   "authors": {
-    "TangXiaoDe": "xiaodehappy@foxmail.com"
+    "ChainOne": "xiaodehappy@foxmail.com"
   },
   "source": {
     "git": "https://github.com/CommunityChain/ChainOneKit-Swift.git",
-    "tag": "0.0.5"
+    "tag": "0.0.8"
   },
   "platforms": {
     "ios": "9.0"
   },
-  "swift_version": "5.0",
+  "swift_versions": "5.0",
   "subspecs": [
     {
       "name": "FoundationExtension",
@@ -35,14 +35,15 @@
       }
     },
     {
-      "name": "Template",
-      "source_files": [
-        "ChainOneKit/Source/Template/Controller/**/*",
-        "ChainOneKit/Source/Template/View/**/*",
-        "ChainOneKit/Source/Template/Vender/**/*",
-        "ChainOneKit/Source/Template/Other/**/*"
-      ],
+      "name": "Common",
+      "source_files": "ChainOneKit/Source/Common/View/**/*",
       "dependencies": {
+        "ChainOneKit-Swift/FoundationExtension": [
+
+        ],
+        "ChainOneKit-Swift/UIKitExtension": [
+
+        ],
         "ChainOneKit-Swift/Constant": [
 
         ]
@@ -64,6 +65,25 @@
 
         ]
       }
+    },
+    {
+      "name": "XDWeb",
+      "source_files": "ChainOneKit/Source/XDWeb/**/*"
+    },
+    {
+      "name": "Template",
+      "source_files": [
+        "ChainOneKit/Source/Template/Controller/**/*",
+        "ChainOneKit/Source/Template/View/**/*",
+        "ChainOneKit/Source/Template/Vender/**/*",
+        "ChainOneKit/Source/Template/Other/**/*"
+      ],
+      "dependencies": {
+        "ChainOneKit-Swift/Constant": [
+
+        ]
+      }
     }
-  ]
+  ],
+  "swift_version": "5.0"
 }

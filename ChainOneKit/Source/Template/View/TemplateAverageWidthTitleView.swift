@@ -109,9 +109,9 @@ extension TemplateAverageWidthTitleView {
     fileprivate func initialUI() -> Void {
         self.addSubview(self.mainView)
         self.initialMainView(self.mainView)
-        self.mainView.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
-        }
+//        self.mainView.snp.makeConstraints { (make) in
+//            make.edges.equalToSuperview()
+//        }
     }
     fileprivate func initialMainView(_ mainView: UIView) -> Void {
         // buttons
@@ -120,39 +120,39 @@ extension TemplateAverageWidthTitleView {
             let button: UIButton = UIButton.init(type: .custom)
             mainView.addSubview(button)
             button.set(title: title, titleColor: UIColor.white, for: .normal)
-            button.set(title: title, titleColor: IMeetColor.theme, for: .selected)
+            button.set(title: title, titleColor: UIColor.green, for: .selected)
             button.set(font: UIFont.init(name: "PingFangSC-Medium", size: 16))
             button.tag = self.titleBtnTagBase + index
             button.addTarget(self, action: #selector(buttonClick(_:)), for: .touchUpInside)
             button.contentEdgeInsets = UIEdgeInsets.init(top: 0, left: 20, bottom: 0, right: 20)
-            button.snp.makeConstraints { (make) in
-                make.top.bottom.equalToSuperview()
-                make.centerX.equalTo(btnMaxW * (CGFloat(index) + 0.5))
-            }
+//            button.snp.makeConstraints { (make) in
+//                make.top.bottom.equalToSuperview()
+//                make.centerX.equalTo(btnMaxW * (CGFloat(index) + 0.5))
+//            }
         }
         self.squareBtn = (mainView.viewWithTag(self.titleBtnTagBase + 0) as! UIButton)
         self.recommendBtn = (mainView.viewWithTag(self.titleBtnTagBase + 1) as! UIButton)
         self.followBtn = (mainView.viewWithTag(self.titleBtnTagBase + 2) as! UIButton)
         // slider
         mainView.addSubview(self.sliderView)
-        self.sliderView.backgroundColor = IMeetColor.theme
+        self.sliderView.backgroundColor = UIColor.green
         self.sliderView.set(cornerRadius: self.sliderViewH * 0.5)
-        self.sliderView.snp.makeConstraints { (make) in
-            make.width.equalTo(self.sliderViewW)
-            make.height.equalTo(self.sliderViewH)
-            make.bottom.equalToSuperview()
-            make.centerX.equalTo(self.squareBtn)
-        }
+//        self.sliderView.snp.makeConstraints { (make) in
+//            make.width.equalTo(self.sliderViewW)
+//            make.height.equalTo(self.sliderViewH)
+//            make.bottom.equalToSuperview()
+//            make.centerX.equalTo(self.squareBtn)
+//        }
         // 默认选中
         if let selectedBtn = mainView.viewWithTag(self.titleBtnTagBase + self.selectedIndex) as? UIButton {
             selectedBtn.isSelected = true
             self.currentSelectedBtn = selectedBtn
-            self.sliderView.snp.remakeConstraints { (make) in
-                make.width.equalTo(self.sliderViewW)
-                make.height.equalTo(self.sliderViewH)
-                make.bottom.equalToSuperview()
-                make.centerX.equalTo(self.squareBtn)
-            }
+//            self.sliderView.snp.remakeConstraints { (make) in
+//                make.width.equalTo(self.sliderViewW)
+//                make.height.equalTo(self.sliderViewH)
+//                make.bottom.equalToSuperview()
+//                make.centerX.equalTo(self.squareBtn)
+//            }
         }
     }
     
@@ -182,12 +182,12 @@ extension TemplateAverageWidthTitleView {
         button.isSelected = true
         self.currentSelectedBtn = button
         self.selectedIndex = index
-        self.sliderView.snp.remakeConstraints { (make) in
-            make.width.equalTo(self.sliderViewW)
-            make.height.equalTo(self.sliderViewH)
-            make.bottom.equalToSuperview()
-            make.centerX.equalTo(button)
-        }
+//        self.sliderView.snp.remakeConstraints { (make) in
+//            make.width.equalTo(self.sliderViewW)
+//            make.height.equalTo(self.sliderViewH)
+//            make.bottom.equalToSuperview()
+//            make.centerX.equalTo(button)
+//        }
         UIView.animate(withDuration: 0.25) {
             self.mainView.layoutIfNeeded()
         }
