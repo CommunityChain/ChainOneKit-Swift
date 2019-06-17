@@ -1,6 +1,6 @@
 ## Usaing
 ```
-pod 'ChainOneKit-Swift', :git => 'https://github.com/CommunityChain/ChainOneKit-Swift.git', :tag => '0.0.6'
+pod 'ChainOneKit-Swift', :git => 'https://github.com/CommunityChain/ChainOneKit-Swift.git', :tag => '0.0.9'
 ```
 
 
