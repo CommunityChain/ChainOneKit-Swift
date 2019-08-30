@@ -1,5 +1,5 @@
 //
-//  TemplateViewController.swift
+//  TemplateControllerView.swift
 //  SwiftKit-XiaoDe
 //
 //  Created by 小唐 on 13/02/2018.
@@ -10,7 +10,7 @@
 import UIKit
 
 /// UIViewController 的使用模板
-class TemplateViewController: UIViewController
+class TemplateControllerView: UIViewController
 {
     // MARK: - Internal Property
     
@@ -35,7 +35,7 @@ class TemplateViewController: UIViewController
 // MARK: - Internal Function
 
 // MARK: - LifeCircle & Override Function
-extension TemplateViewController {
+extension TemplateControllerView {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialUI()
@@ -92,7 +92,7 @@ extension TemplateViewController {
 }
 
 // MARK: - UI
-extension TemplateViewController {
+extension TemplateControllerView {
     /// 页面布局
     fileprivate func initialUI() -> Void {
         self.view.backgroundColor = UIColor.white
@@ -100,7 +100,7 @@ extension TemplateViewController {
 }
 
 // MARK: - Data(数据处理与加载)
-extension TemplateViewController {
+extension TemplateControllerView {
     /// 默认数据加载
     fileprivate func initialDataSource() -> Void {
         
@@ -108,29 +108,29 @@ extension TemplateViewController {
 }
 
 // MARK: - Event(事件响应)
-extension TemplateViewController {
+extension TemplateControllerView {
     
 }
 
 // MARK: - Enter Page
-extension TemplateViewController {
+extension TemplateControllerView {
     
 }
 
 // MARK: - Notification
-extension TemplateViewController {
+extension TemplateControllerView {
     
 }
 
 // MARK: - Extension Function
-extension TemplateViewController {
+extension TemplateControllerView {
     
 }
 
 // MARK: - Delegate Function
 
 // MARK: - <>
-extension TemplateViewController {
+extension TemplateControllerView {
     
 }
 

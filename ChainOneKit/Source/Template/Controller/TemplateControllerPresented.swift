@@ -1,5 +1,5 @@
 //
-//  TemplatePresentedController.swift
+//  TemplateControllerPresented.swift
 //  ChainOneKit
 //
 //  Created by 小唐 on 2019/1/21.
@@ -9,7 +9,7 @@
 
 import UIKit
 
-class TemplatePresentedController: UIViewController
+class TemplateControllerPresented: UIViewController
 {
     // MARK: - Internal Property
     
@@ -36,7 +36,7 @@ class TemplatePresentedController: UIViewController
 // MARK: - Internal Function
 
 // MARK: - LifeCircle Function
-extension TemplatePresentedController {
+extension TemplateControllerPresented {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialUI()
@@ -52,7 +52,7 @@ extension TemplatePresentedController {
 }
 
 // MARK: - UI
-extension TemplatePresentedController {
+extension TemplateControllerPresented {
     /// 页面布局
     fileprivate func initialUI() -> Void {
         self.view.backgroundColor = UIColor.white
@@ -61,7 +61,7 @@ extension TemplatePresentedController {
 }
 
 // MARK: - Data(数据处理与加载)
-extension TemplatePresentedController {
+extension TemplateControllerPresented {
     /// 默认数据加载
     fileprivate func initialDataSource() -> Void {
         
@@ -69,24 +69,24 @@ extension TemplatePresentedController {
 }
 
 // MARK: - Event(事件响应)
-extension TemplatePresentedController {
+extension TemplateControllerPresented {
     
 }
 
 // MARK: - Notification
-extension TemplatePresentedController {
+extension TemplateControllerPresented {
     
 }
 
 // MARK: - Extension Function
-extension TemplatePresentedController {
+extension TemplateControllerPresented {
     
 }
 
 // MARK: - Delegate Function
 
 // MARK: - <>
-extension TemplatePresentedController {
+extension TemplateControllerPresented {
     
 }
 

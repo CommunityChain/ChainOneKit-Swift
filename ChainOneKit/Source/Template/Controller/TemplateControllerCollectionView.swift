@@ -1,5 +1,5 @@
 //
-//  TemplateCollectionViewController.swift
+//  TemplateControllerCollectionView.swift
 //  ChainOneKit
 //
 //  Created by 小唐 on 2019/3/5.
@@ -9,7 +9,7 @@
 
 import UIKit
 
-class TemplateCollectionViewController: UIViewController {
+class TemplateControllerCollectionView: UIViewController {
     // MARK: - Internal Property
     
     
@@ -47,7 +47,7 @@ class TemplateCollectionViewController: UIViewController {
 // MARK: - Internal Function
 
 // MARK: - LifeCircle Function
-extension TemplateCollectionViewController {
+extension TemplateControllerCollectionView {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialUI()
@@ -56,7 +56,7 @@ extension TemplateCollectionViewController {
 }
 
 // MARK: - UI
-extension TemplateCollectionViewController {
+extension TemplateControllerCollectionView {
     /// 页面布局
     @objc func initialUI() -> Void {
         self.view.backgroundColor = UIColor.white
@@ -85,7 +85,7 @@ extension TemplateCollectionViewController {
 }
 
 // MARK: - Data(数据处理与加载)
-extension TemplateCollectionViewController {
+extension TemplateControllerCollectionView {
     // MARK: - Private  数据处理与加载
     @objc func initialDataSource() -> Void {
         //self.collectionView.mj_header.beginRefreshing()
@@ -137,7 +137,7 @@ extension TemplateCollectionViewController {
 }
 
 // MARK: - Event(事件响应)
-extension TemplateCollectionViewController {
+extension TemplateControllerCollectionView {
     @objc fileprivate func leftBarItemClick() -> Void {
         
     }
@@ -147,18 +147,18 @@ extension TemplateCollectionViewController {
 }
 
 // MARK: - Notification
-extension TemplateCollectionViewController {
+extension TemplateControllerCollectionView {
     
 }
 
 // MARK: - Extension Function
-extension TemplateCollectionViewController {
+extension TemplateControllerCollectionView {
 }
 
 // MARK: - Delegate Function
 
 // MARK: - <UICollectionViewDataSource>
-extension TemplateCollectionViewController: UICollectionViewDataSource {
+extension TemplateControllerCollectionView: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         let count = 1
@@ -188,7 +188,7 @@ extension TemplateCollectionViewController: UICollectionViewDataSource {
 }
 
 // MARK: - <UICollectionViewDelegate>
-extension TemplateCollectionViewController: UICollectionViewDelegate {
+extension TemplateControllerCollectionView: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
         return true
@@ -200,7 +200,7 @@ extension TemplateCollectionViewController: UICollectionViewDelegate {
     
 }
 
-extension TemplateCollectionViewController: UICollectionViewDelegateFlowLayout {
+extension TemplateControllerCollectionView: UICollectionViewDelegateFlowLayout {
     /// 定义每个UICollectionViewCell 的大小
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let lrMargin: CGFloat = 10

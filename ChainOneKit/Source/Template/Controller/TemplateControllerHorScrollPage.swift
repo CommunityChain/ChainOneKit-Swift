@@ -1,5 +1,5 @@
 //
-//  TemplateHorScrollPageController.swift
+//  TemplateControllerHorScrollPage.swift
 //  ChainOneKit
 //
 //  Created by 小唐 on 2019/1/18.
@@ -9,7 +9,7 @@
 
 import UIKit
 
-class TemplateHorScrollPageController: UIViewController
+class TemplateControllerHorScrollPage: UIViewController
 {
     // MARK: - Internal Property
     
@@ -53,7 +53,7 @@ class TemplateHorScrollPageController: UIViewController
 // MARK: - Internal Function
 
 // MARK: - LifeCircle Function
-extension TemplateHorScrollPageController {
+extension TemplateControllerHorScrollPage {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialUI()
@@ -69,7 +69,7 @@ extension TemplateHorScrollPageController {
 }
 
 // MARK: - UI
-extension TemplateHorScrollPageController {
+extension TemplateControllerHorScrollPage {
     /// 页面布局
     fileprivate func initialUI() -> Void {
         self.view.backgroundColor = UIColor.white
@@ -116,7 +116,7 @@ extension TemplateHorScrollPageController {
 }
 
 // MARK: - Data(数据处理与加载)
-extension TemplateHorScrollPageController {
+extension TemplateControllerHorScrollPage {
     /// 默认数据加载
     fileprivate func initialDataSource() -> Void {
         // 默认选择
@@ -126,7 +126,7 @@ extension TemplateHorScrollPageController {
 }
 
 // MARK: - Event(事件响应)
-extension TemplateHorScrollPageController {
+extension TemplateControllerHorScrollPage {
     
     /// segment点击响应
     @objc fileprivate func segmentClick(_ segment: UISegmentedControl) -> Void {
@@ -136,19 +136,19 @@ extension TemplateHorScrollPageController {
 }
 
 // MARK: - Notification
-extension TemplateHorScrollPageController {
+extension TemplateControllerHorScrollPage {
     
 }
 
 // MARK: - Extension Function
-extension TemplateHorScrollPageController {
+extension TemplateControllerHorScrollPage {
     
 }
 
 // MARK: - Delegate Function
 
 // MARK: - <UIScrollViewDelegate>
-extension TemplateHorScrollPageController: UIScrollViewDelegate {
+extension TemplateControllerHorScrollPage: UIScrollViewDelegate {
     /// 滑动结束 回调
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let scrollIndex: Int = Int(scrollView.contentOffset.x / kScreenWidth)

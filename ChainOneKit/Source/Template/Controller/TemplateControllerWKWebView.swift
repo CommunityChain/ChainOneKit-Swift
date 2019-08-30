@@ -1,22 +1,22 @@
 //
-//  TemplateUIWebViewController.swift
+//  TemplateControllerWKWebView.swift
 //  ChainOneKit
 //
 //  Created by 小唐 on 2019/1/11.
 //  Copyright © 2019 ChainOne. All rights reserved.
 //
-//  使用UIWebView的控制器模板
+//  使用WKWebView的控制器模板
 
 import UIKit
-import JavaScriptCore
+import WebKit
 
-class TemplateUIWebViewController: UIViewController
+class TemplateControllerWKWebView: UIViewController
 {
     // MARK: - Internal Property
     let source: WebViewSource
     
     // MARK: - Private Property
-    fileprivate let webView: UIWebView = UIWebView.init(frame: CGRect.zero)
+    fileprivate weak var webView: WKWebView!
     
     // MARK: - Initialize Function
     
@@ -66,7 +66,7 @@ class TemplateUIWebViewController: UIViewController
 // MARK: - Internal Function
 
 // MARK: - LifeCircle Function
-extension TemplateUIWebViewController {
+extension TemplateControllerWKWebView {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialUI()
@@ -82,26 +82,29 @@ extension TemplateUIWebViewController {
 }
 
 // MARK: - UI
-extension TemplateUIWebViewController {
+extension TemplateControllerWKWebView {
     /// 页面布局
     fileprivate func initialUI() -> Void {
         self.view.backgroundColor = UIColor.white
-        // navigationbar
-        
         // webview
-        self.view.addSubview(self.webView)
-        self.webView.scrollView.bounces = false
-        self.webView.delegate = self
-        self.webView.scrollView.showsVerticalScrollIndicator = false
-        self.webView.frame = self.view.bounds
-//        self.webView.snp.makeConstraints { (make) in
+        let config: WKWebViewConfiguration = WKWebViewConfiguration()
+        let webView: WKWebView = WKWebView(frame: CGRect.zero, configuration: config)
+        self.view.addSubview(webView)
+        webView.scrollView.bounces = false
+        //webView.uiDelegate = self
+        //webView.navigationDelegate = self
+        webView.frame = self.view.bounds
+//        webView.snp.makeConstraints { (make) in
 //            make.edges.equalToSuperview()
 //        }
+        self.webView = webView
+        // 注册js(使用WKScriptMessageHandler)
+        
     }
 }
 
 // MARK: - Data(数据处理与加载)
-extension TemplateUIWebViewController {
+extension TemplateControllerWKWebView {
     /// 默认数据加载
     fileprivate func initialDataSource() -> Void {
         // open func loadRequest(_ request: URLRequest)
@@ -114,84 +117,63 @@ extension TemplateUIWebViewController {
         case .url(let url):
             //let request = URLRequest(url: url)
             let request = URLRequest(url: url, cachePolicy: URLRequest.CachePolicy.reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 60.0)
-            self.webView.loadRequest(request)
+            self.webView.load(request)
         case .strUrl(let strUrl):
             if let url = URL(string: strUrl) {
                 let request = URLRequest(url: url)
-                self.webView.loadRequest(request)
+                self.webView.load(request)
             }
         case .html(let html, let baseURL):
             self.webView.loadHTMLString(html, baseURL: baseURL)
         case .data(let data, let mimeType, let encodingName, let baseURL):
-            self.webView.load(data, mimeType: mimeType, textEncodingName: encodingName, baseURL: baseURL)
+            self.webView.load(data, mimeType: mimeType, characterEncodingName: encodingName, baseURL: baseURL)
         }
     }
 }
 
 // MARK: - Event(事件响应)
-extension TemplateUIWebViewController {
+extension TemplateControllerWKWebView {
     
 }
 
 // MARK: - Notification
-extension TemplateUIWebViewController {
+extension TemplateControllerWKWebView {
     
 }
 
 // MARK: - Extension Function
-extension TemplateUIWebViewController {
-    /// 执行js - 子类继承，需要放开权限
-    func executeJS(_ js: String) -> String? {
-        return self.webView.stringByEvaluatingJavaScript(from: js)
-        // 获取网页标题的js: "document.title"
-        
-    }
-    
-    /// 注入js
-    fileprivate func initialJSContent(with webview: UIWebView) -> Void {
-        guard let context = webView.value(forKeyPath: "documentView.webView.mainFrame.javaScriptContext") as? JSContext else {
-            return
+extension TemplateControllerWKWebView {
+    /// 执行js
+    fileprivate func executeJS(_ js: String, complete: ((Any?, Error?) -> Void)? = nil ) -> Void {
+        self.webView.evaluateJavaScript(js) { (result, error) in
+            complete?(result, error)
         }
-        // 打印异常,由于JS的异常信息是不会在OC中被直接打印的,所以我们在这里添加打印异常信息,
-        context.exceptionHandler = { (context: JSContext?, exception: JSValue?) -> Void in
-            print(exception.debugDescription)
-        }
-        
-        // js注入
-    }
-}
-extension TemplateUIWebViewController {
-    
-    /// 刷新网页
-    func reloadData() {
-        self.webView.reload()
     }
 }
 
 // MARK: - Delegate Function
 
-// MARK: - <UIWebViewDelegate>
-extension TemplateUIWebViewController: UIWebViewDelegate {
+// MARK: - <WKNavigationDelegate>
+extension TemplateControllerWKWebView: WKNavigationDelegate {
     
-    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebView.NavigationType) -> Bool {
-        return true
+    /// 加载完成
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        // print(webView.configuration.userContentController)
     }
     
-    func webViewDidStartLoad(_ webView: UIWebView) {
+    /// 加载错误
+    func webView(_ webView: WKWebView, didReceiveServerRedirectForProvisionalNavigation navigation: WKNavigation!) {
         
     }
     
-    func webViewDidFinishLoad(_ webView: UIWebView) {
-        // 1. 获取网页title
-        let title = self.executeJS("document.title")
-        self.navigationItem.title = title
-        // 2. js注入
-        self.initialJSContent(with: webView)
-    }
-    
-    func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
+    /// 在提交的主帧中发生错误时调用
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
         
     }
     
 }
 
+// MARK: - <WKUIDelegate>
+extension TemplateControllerWKWebView: WKUIDelegate {
+    
+}

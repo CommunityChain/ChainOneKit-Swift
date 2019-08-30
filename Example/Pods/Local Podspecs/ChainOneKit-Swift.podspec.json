@@ -1,7 +1,7 @@
 {
   "name": "ChainOneKit-Swift",
   "module_name": "ChainOneKit",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "summary": "the kit for ChainOne in Swift",
   "license": "MIT",
   "homepage": "https://github.com/CommunityChain/ChainOneKit-Swift.git",
@@ -10,7 +10,7 @@
   },
   "source": {
     "git": "https://github.com/CommunityChain/ChainOneKit-Swift.git",
-    "tag": "0.0.8"
+    "tag": "0.0.9"
   },
   "platforms": {
     "ios": "9.0"

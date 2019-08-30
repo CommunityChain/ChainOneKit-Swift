@@ -18,6 +18,7 @@ class TemplateTableViewCell: UITableViewCell
     /// 重用标识符
     static let identifier: String = "TemplateTableViewCellReuseIdentifier"
     
+    var indexPath: IndexPath?
     var model: String? {
         didSet {
             self.setupWithModel(model)
@@ -50,7 +51,7 @@ class TemplateTableViewCell: UITableViewCell
 // MARK: - Internal Function
 extension TemplateTableViewCell {
     /// 便利构造方法
-    class func cellInTableView(_ tableView: UITableView) -> TemplateTableViewCell {
+    class func cellInTableView(_ tableView: UITableView, at indexPath: IndexPath? = nil) -> TemplateTableViewCell {
         let identifier = TemplateTableViewCell.identifier
         var cell = tableView.dequeueReusableCell(withIdentifier: identifier)
         if nil == cell {
@@ -59,6 +60,7 @@ extension TemplateTableViewCell {
         // 状态重置
         if let cell = cell as? TemplateTableViewCell {
             cell.resetSelf()
+            cell.indexPath = indexPath
         }
         return cell as! TemplateTableViewCell
     }

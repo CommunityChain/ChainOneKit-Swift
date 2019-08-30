@@ -1,29 +1,29 @@
 PODS:
-  - ChainOneKit-Swift (0.0.8):
-    - ChainOneKit-Swift/Common (= 0.0.8)
-    - ChainOneKit-Swift/Constant (= 0.0.8)
-    - ChainOneKit-Swift/FoundationExtension (= 0.0.8)
-    - ChainOneKit-Swift/Helper (= 0.0.8)
-    - ChainOneKit-Swift/Template (= 0.0.8)
-    - ChainOneKit-Swift/UIKitExtension (= 0.0.8)
-    - ChainOneKit-Swift/XDNestView (= 0.0.8)
-    - ChainOneKit-Swift/XDPackageTimer (= 0.0.8)
-    - ChainOneKit-Swift/XDWeb (= 0.0.8)
-  - ChainOneKit-Swift/Common (0.0.8):
+  - ChainOneKit-Swift (0.0.9):
+    - ChainOneKit-Swift/Common (= 0.0.9)
+    - ChainOneKit-Swift/Constant (= 0.0.9)
+    - ChainOneKit-Swift/FoundationExtension (= 0.0.9)
+    - ChainOneKit-Swift/Helper (= 0.0.9)
+    - ChainOneKit-Swift/Template (= 0.0.9)
+    - ChainOneKit-Swift/UIKitExtension (= 0.0.9)
+    - ChainOneKit-Swift/XDNestView (= 0.0.9)
+    - ChainOneKit-Swift/XDPackageTimer (= 0.0.9)
+    - ChainOneKit-Swift/XDWeb (= 0.0.9)
+  - ChainOneKit-Swift/Common (0.0.9):
     - ChainOneKit-Swift/Constant
     - ChainOneKit-Swift/FoundationExtension
     - ChainOneKit-Swift/UIKitExtension
-  - ChainOneKit-Swift/Constant (0.0.8):
+  - ChainOneKit-Swift/Constant (0.0.9):
     - ChainOneKit-Swift/UIKitExtension
-  - ChainOneKit-Swift/FoundationExtension (0.0.8)
-  - ChainOneKit-Swift/Helper (0.0.8):
+  - ChainOneKit-Swift/FoundationExtension (0.0.9)
+  - ChainOneKit-Swift/Helper (0.0.9):
     - ChainOneKit-Swift/FoundationExtension
-  - ChainOneKit-Swift/Template (0.0.8):
+  - ChainOneKit-Swift/Template (0.0.9):
     - ChainOneKit-Swift/Constant
-  - ChainOneKit-Swift/UIKitExtension (0.0.8)
-  - ChainOneKit-Swift/XDNestView (0.0.8)
-  - ChainOneKit-Swift/XDPackageTimer (0.0.8)
-  - ChainOneKit-Swift/XDWeb (0.0.8)
+  - ChainOneKit-Swift/UIKitExtension (0.0.9)
+  - ChainOneKit-Swift/XDNestView (0.0.9)
+  - ChainOneKit-Swift/XDPackageTimer (0.0.9)
+  - ChainOneKit-Swift/XDWeb (0.0.9)
 
 DEPENDENCIES:
   - ChainOneKit-Swift (from `../`)
@@ -33,7 +33,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  ChainOneKit-Swift: f56f525dbe3725017116944154d3931961eeb5d8
+  ChainOneKit-Swift: 2770f8b553565d6cc0950ad5672741f48a281620
 
 PODFILE CHECKSUM: bebd73b3263340beab2adf8c819142213534a536
 

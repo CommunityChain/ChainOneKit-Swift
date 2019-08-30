@@ -1,5 +1,5 @@
 //
-//  TemplateAverageWidthTitleView.swift
+//  TemplateViewAverageWidthTitle.swift
 //  iMeet
 //
 //  Created by 小唐 on 2019/6/12.
@@ -9,14 +9,14 @@
 
 import UIKit
 
-protocol TemplateAverageWidthTitleViewProtocol: class {
-    func titleView(_ titleView: TemplateAverageWidthTitleView, didClicked title: String, at index: Int) -> Void
+protocol TemplateViewAverageWidthTitleProtocol: class {
+    func titleView(_ titleView: TemplateViewAverageWidthTitle, didClicked title: String, at index: Int) -> Void
 }
 
 
-typealias TemplateAverageWidthTitleSelectView = TemplateAverageWidthTitleView
+typealias TemplateAverageWidthTitleSelectView = TemplateViewAverageWidthTitle
 ///
-class TemplateAverageWidthTitleView: UIView {
+class TemplateViewAverageWidthTitle: UIView {
     
     // MARK: - Internal Property
     
@@ -26,8 +26,8 @@ class TemplateAverageWidthTitleView: UIView {
     private(set) var selectedIndex: Int = 0
     
     /// 回调
-    weak var delegate: TemplateAverageWidthTitleViewProtocol?
-    var titleClickAction: ((_ titleView: TemplateAverageWidthTitleView, _ title: String, _ index: Int) -> Void)?
+    weak var delegate: TemplateViewAverageWidthTitleProtocol?
+    var titleClickAction: ((_ titleView: TemplateViewAverageWidthTitle, _ title: String, _ index: Int) -> Void)?
     
     // MARK: - Private Property
     
@@ -71,9 +71,9 @@ class TemplateAverageWidthTitleView: UIView {
 }
 
 // MARK: - Internal Function
-extension TemplateAverageWidthTitleView {
-    class func loadXib() -> TemplateAverageWidthTitleView? {
-        return Bundle.main.loadNibNamed("TemplateAverageWidthTitleView", owner: nil, options: nil)?.first as? TemplateAverageWidthTitleView
+extension TemplateViewAverageWidthTitle {
+    class func loadXib() -> TemplateViewAverageWidthTitle? {
+        return Bundle.main.loadNibNamed("TemplateViewAverageWidthTitle", owner: nil, options: nil)?.first as? TemplateViewAverageWidthTitle
     }
     
     /// 设置当前选中索引
@@ -89,7 +89,7 @@ extension TemplateAverageWidthTitleView {
 }
 
 // MARK: - LifeCircle Function
-extension TemplateAverageWidthTitleView {
+extension TemplateViewAverageWidthTitle {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.initialInAwakeNib()
@@ -103,7 +103,7 @@ extension TemplateAverageWidthTitleView {
     
 }
 // MARK: - Private UI 手动布局
-extension TemplateAverageWidthTitleView {
+extension TemplateViewAverageWidthTitle {
     
     /// 界面布局
     fileprivate func initialUI() -> Void {
@@ -158,7 +158,7 @@ extension TemplateAverageWidthTitleView {
     
 }
 // MARK: - Private UI Xib加载后处理
-extension TemplateAverageWidthTitleView {
+extension TemplateViewAverageWidthTitle {
     /// awakeNib时的处理
     fileprivate func initialInAwakeNib() -> Void {
         
@@ -166,12 +166,12 @@ extension TemplateAverageWidthTitleView {
 }
 
 // MARK: - Data Function
-extension TemplateAverageWidthTitleView {
+extension TemplateViewAverageWidthTitle {
 
 }
 
 // MARK: - Event Function
-extension TemplateAverageWidthTitleView {
+extension TemplateViewAverageWidthTitle {
     /// 按钮点击
     @objc fileprivate func buttonClick(_ button: UIButton) -> Void {
         if button.isSelected {
@@ -198,14 +198,14 @@ extension TemplateAverageWidthTitleView {
 }
 
 // MARK: - Extension Function
-extension TemplateAverageWidthTitleView {
+extension TemplateViewAverageWidthTitle {
     
 }
 
 // MARK: - Delegate Function
 
 // MARK: - <XXXDelegate>
-extension TemplateAverageWidthTitleView {
+extension TemplateViewAverageWidthTitle {
     
 }
 
