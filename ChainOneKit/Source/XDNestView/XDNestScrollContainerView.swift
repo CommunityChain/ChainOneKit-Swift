@@ -36,7 +36,7 @@ open class XDNestScrollContainerView: UIView {
 
     open var canScroll: Bool = true
 
-    // UIWebView/UIScrollView
+    // WebView/UIScrollView
     open var allowViews: [UIView] = [] {
         didSet {
             self.container.allowViews = allowViews

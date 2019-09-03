@@ -9,12 +9,13 @@
 //  允许手势和事件通过的UIScrollView
 
 import UIKit
+import WebKit
 
 public typealias XDNestingScrollableScrollView = XDNestScrollView
 public typealias XDNestingScrollScrollView = XDNestScrollView
 open class XDNestScrollView: UIScrollView {
 
-    // UIWebView/UIScrollView
+    // WebView/UIScrollView
     open var allowViews: [UIView] = []
 
     init() {
@@ -45,10 +46,9 @@ extension XDNestScrollView: UIGestureRecognizerDelegate {
         guard var view = otherGestureRecognizer.view else {
             return false
         }
-        if let superView = view.superview, superView.isKind(of: UIWebView.self) {
+        if let superView = view.superview, superView.isKind(of: WKWebView.self) {
             view = superView
         }
-
         let flag: Bool = self.allowViews.contains(view)
         return flag
     }

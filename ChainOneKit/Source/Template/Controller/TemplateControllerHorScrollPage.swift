@@ -15,9 +15,9 @@ class TemplateControllerHorScrollPage: UIViewController
     
     // MARK: - Private Property
     fileprivate let scrollView: UIScrollView = UIScrollView()
-    fileprivate let followListVC = TemplateTableViewController()
-    fileprivate let recommentListVC = TemplateViewController()
-    fileprivate let aroundListVC = TemplateTableViewController()
+    fileprivate let followListVC = TemplateControllerTableView()
+    fileprivate let recommentListVC = TemplateControllerTableView()
+    fileprivate let aroundListVC = TemplateControllerTableView()
     
     fileprivate let titles: [String] = ["关注", "推荐", "附近"]
     fileprivate let titleSegment: UISegmentedControl = UISegmentedControl(items: ["关注", "推荐", "附近"])
