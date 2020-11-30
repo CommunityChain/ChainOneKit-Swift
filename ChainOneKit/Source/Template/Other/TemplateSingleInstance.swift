@@ -11,6 +11,7 @@ import Foundation
 
 class TemplateSingleManager
 {
+
     /// 单例
     static let instance = TemplateSingleManager()
     private init() {
@@ -18,6 +19,7 @@ class TemplateSingleManager
     }
 
     // MARK: - Internal Property
+
     // MARK: - Private Property
 
 }

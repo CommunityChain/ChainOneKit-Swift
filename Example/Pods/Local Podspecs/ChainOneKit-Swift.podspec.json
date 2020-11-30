@@ -18,18 +18,17 @@
   "swift_versions": "5.0",
   "subspecs": [
     {
-      "name": "FoundationExtension",
-      "source_files": "ChainOneKit/Source/Extension/Foundation+Extension/**/*"
-    },
-    {
-      "name": "UIKitExtension",
-      "source_files": "ChainOneKit/Source/Extension/UIKit+Extension/**/*"
+      "name": "Extension",
+      "source_files": [
+        "ChainOneKit/Source/Extension/Foundation+Extension/**/*",
+        "ChainOneKit/Source/Extension/UIKit+Extension/**/*"
+      ]
     },
     {
       "name": "Constant",
       "source_files": "ChainOneKit/Source/Constant/**/*",
       "dependencies": {
-        "ChainOneKit-Swift/UIKitExtension": [
+        "ChainOneKit-Swift/Extension": [
 
         ]
       }
@@ -38,10 +37,7 @@
       "name": "Common",
       "source_files": "ChainOneKit/Source/Common/View/**/*",
       "dependencies": {
-        "ChainOneKit-Swift/FoundationExtension": [
-
-        ],
-        "ChainOneKit-Swift/UIKitExtension": [
+        "ChainOneKit-Swift/Extension": [
 
         ],
         "ChainOneKit-Swift/Constant": [
@@ -61,7 +57,7 @@
       "name": "Helper",
       "source_files": "ChainOneKit/Source/Helper/**/*",
       "dependencies": {
-        "ChainOneKit-Swift/FoundationExtension": [
+        "ChainOneKit-Swift/Extension": [
 
         ]
       }

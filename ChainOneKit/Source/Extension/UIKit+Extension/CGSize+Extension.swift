@@ -20,10 +20,12 @@ extension CGSize {
 
 // MARK: - 等比拉伸
 public extension CGSize {
+
     /// 对指定尺寸等比拉伸，其中宽拉伸到指定尺寸
     internal static func scaleAspectSize(_ size: CGSize, forWidth width: CGFloat) -> CGSize {
         return size.scaleAspectForWidth(width)
     }
+    /// 等比拉伸，以宽为准
     func scaleAspectForWidth(_ width: CGFloat) -> CGSize {
         let fHeight: CGFloat
         if self.width <= 0.000_001 {
@@ -39,6 +41,7 @@ public extension CGSize {
     static func scaleAspectSize(_ size: CGSize, forHeight height: CGFloat) -> CGSize {
         return size.scaleAspectForHeight(height)
     }
+    /// 等比拉伸，以高为准
     func scaleAspectForHeight(_ height: CGFloat) -> CGSize {
         let fWidth: CGFloat
         if self.height <= 0.000_001 {
@@ -49,4 +52,5 @@ public extension CGSize {
         let width: CGFloat = CGFloat(round(Double(CGFloat(fWidth))))
         return CGSize(width: width, height: height)
     }
+
 }

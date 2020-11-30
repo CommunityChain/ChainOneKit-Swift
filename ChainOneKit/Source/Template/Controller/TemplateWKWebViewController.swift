@@ -1,5 +1,5 @@
 //
-//  TemplateControllerWKWebView.swift
+//  TemplateWKWebViewController.swift
 //  ChainOneKit
 //
 //  Created by 小唐 on 2019/1/11.
@@ -10,35 +10,36 @@
 import UIKit
 import WebKit
 
-class TemplateControllerWKWebView: UIViewController
+class TemplateWKWebViewController: UIViewController
 {
+
     // MARK: - Internal Property
-    let source: WebViewSource
+    let source: XDWebViewSource
     
     // MARK: - Private Property
     fileprivate weak var webView: WKWebView!
     
     // MARK: - Initialize Function
     
-    init(source: WebViewSource) {
+    init(source: XDWebViewSource) {
         self.source = source
         super.init(nibName: nil, bundle: nil)
     }
     init(url: URL) {
-        self.source = WebViewSource.url(url: url)
+        self.source = XDWebViewSource.url(url: url)
         super.init(nibName: nil, bundle: nil)
     }
     init(strUrl: String) {
-        self.source = WebViewSource.strUrl(strUrl: strUrl)
+        self.source = XDWebViewSource.strUrl(strUrl: strUrl)
         super.init(nibName: nil, bundle: nil)
     }
     init(html: String, baseURL: URL? = Bundle.main.bundleURL) {
-        self.source = WebViewSource.html(html: html, baseURL: baseURL)
+        self.source = XDWebViewSource.html(html: html, baseURL: baseURL)
         super.init(nibName: nil, bundle: nil)
     }
     /// 1. 该构造方法需要进一步进行测试
     init(data: Data, mimeType: String = "text/html", encodingName: String = "utf-8", baseURL: URL = Bundle.main.bundleURL) {
-        self.source = WebViewSource.data(data: data, mimeType: mimeType, encodingName: encodingName, baseURL: baseURL)
+        self.source = XDWebViewSource.data(data: data, mimeType: mimeType, encodingName: encodingName, baseURL: baseURL)
         super.init(nibName: nil, bundle: nil)
     }
     /// 文件加载
@@ -47,8 +48,8 @@ class TemplateControllerWKWebView: UIViewController
             fatalError("htmlFile \(htmlFile) 加载异常")
             //return
         }
-        //self.source = WebViewSource.data(data: htmlData, mimeType: "text/html", encodingName: "utf-8", baseURL: Bundle.main.bundleURL)
-        self.source = WebViewSource.html(html: htmlString, baseURL: Bundle.main.bundleURL)
+        //self.source = XDWebViewSource.data(data: htmlData, mimeType: "text/html", encodingName: "utf-8", baseURL: Bundle.main.bundleURL)
+        self.source = XDWebViewSource.html(html: htmlString, baseURL: Bundle.main.bundleURL)
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -57,32 +58,33 @@ class TemplateControllerWKWebView: UIViewController
         fatalError("init(coder:) has not been implemented")
     }
 
-    //    /// injection回调
-    //    @objc func injected() -> Void {
-    //        self.viewDidLoad()
-    //    }
 }
 
 // MARK: - Internal Function
 
 // MARK: - LifeCircle Function
-extension TemplateControllerWKWebView {
+extension TemplateWKWebViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialUI()
         self.initialDataSource()
     }
     
+    /// 控制器的view将要显示
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
+    /// 控制器的view即将消失
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
     }
+
 }
 
 // MARK: - UI
-extension TemplateControllerWKWebView {
+extension TemplateWKWebViewController {
+
     /// 页面布局
     fileprivate func initialUI() -> Void {
         self.view.backgroundColor = UIColor.white
@@ -101,10 +103,12 @@ extension TemplateControllerWKWebView {
         // 注册js(使用WKScriptMessageHandler)
         
     }
+
 }
 
 // MARK: - Data(数据处理与加载)
-extension TemplateControllerWKWebView {
+extension TemplateWKWebViewController {
+
     /// 默认数据加载
     fileprivate func initialDataSource() -> Void {
         // open func loadRequest(_ request: URLRequest)
@@ -129,32 +133,35 @@ extension TemplateControllerWKWebView {
             self.webView.load(data, mimeType: mimeType, characterEncodingName: encodingName, baseURL: baseURL)
         }
     }
+
 }
 
 // MARK: - Event(事件响应)
-extension TemplateControllerWKWebView {
+extension TemplateWKWebViewController {
     
 }
 
 // MARK: - Notification
-extension TemplateControllerWKWebView {
+extension TemplateWKWebViewController {
     
 }
 
 // MARK: - Extension Function
-extension TemplateControllerWKWebView {
+extension TemplateWKWebViewController {
+
     /// 执行js
     fileprivate func executeJS(_ js: String, complete: ((Any?, Error?) -> Void)? = nil ) -> Void {
         self.webView.evaluateJavaScript(js) { (result, error) in
             complete?(result, error)
         }
     }
+
 }
 
 // MARK: - Delegate Function
 
 // MARK: - <WKNavigationDelegate>
-extension TemplateControllerWKWebView: WKNavigationDelegate {
+extension TemplateWKWebViewController: WKNavigationDelegate {
     
     /// 加载完成
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
@@ -174,6 +181,6 @@ extension TemplateControllerWKWebView: WKNavigationDelegate {
 }
 
 // MARK: - <WKUIDelegate>
-extension TemplateControllerWKWebView: WKUIDelegate {
+extension TemplateWKWebViewController: WKUIDelegate {
     
 }

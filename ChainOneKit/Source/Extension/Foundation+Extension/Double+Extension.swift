@@ -10,6 +10,7 @@
 import Foundation
 
 public extension Double {
+
     /// 小数部分的有效位数处理
     func decimalValidDigitsProcess(digits: Int = 4) -> String {
 
@@ -27,6 +28,7 @@ public extension Double {
 
         return formatter.string(from: NSNumber(value: self))!
     }
+
 }
 
 public extension Double {

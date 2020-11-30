@@ -1,5 +1,5 @@
 //
-//  TemplateView.swift
+//  TemplateUIView.swift
 //  SwiftKit-XiaoDe
 //
 //  Created by 小唐 on 13/02/2018.
@@ -10,7 +10,7 @@
 import UIKit
 
 ///  UIView 的使用模板
-class TemplateView: UIView {
+class TemplateUIView: UIView {
     
     // MARK: - Internal Property
     
@@ -48,14 +48,17 @@ class TemplateView: UIView {
 }
 
 // MARK: - Internal Function
-extension TemplateView {
-    class func loadXib() -> TemplateView? {
-        return Bundle.main.loadNibNamed("TemplateView", owner: nil, options: nil)?.first as? TemplateView
+extension TemplateUIView {
+
+    class func loadXib() -> TemplateUIView? {
+        return Bundle.main.loadNibNamed("TemplateUIView", owner: nil, options: nil)?.first as? TemplateUIView
     }
+
 }
 
 // MARK: - LifeCircle Function
-extension TemplateView {
+extension TemplateUIView {
+
     override func awakeFromNib() {
         super.awakeFromNib()
         self.initialInAwakeNib()
@@ -69,7 +72,7 @@ extension TemplateView {
     
 }
 // MARK: - Private UI 手动布局
-extension TemplateView {
+extension TemplateUIView {
     
     /// 界面布局
     fileprivate func initialUI() -> Void {
@@ -79,23 +82,31 @@ extension TemplateView {
         //    make.edges.equalToSuperview()
         //}
     }
+    /// mainView布局
     fileprivate func initialMainView(_ mainView: UIView) -> Void {
         
     }
     
 }
 // MARK: - Private UI Xib加载后处理
-extension TemplateView {
+extension TemplateUIView {
+
     /// awakeNib时的处理
     fileprivate func initialInAwakeNib() -> Void {
         
     }
+
 }
 
 // MARK: - Data Function
-extension TemplateView {
+extension TemplateUIView {
+    ///
+    fileprivate func setupAsDemo() -> Void {
+        
+    }
     /// 数据加载
     fileprivate func setupWithModel(_ model: String?) -> Void {
+        self.setupAsDemo()
         guard let _ = model else {
             return
         }
@@ -105,19 +116,19 @@ extension TemplateView {
 }
 
 // MARK: - Event Function
-extension TemplateView {
+extension TemplateUIView {
     
 }
 
 // MARK: - Extension Function
-extension TemplateView {
+extension TemplateUIView {
     
 }
 
 // MARK: - Delegate Function
 
 // MARK: - <XXXDelegate>
-extension TemplateView {
+extension TemplateUIView {
     
 }
 

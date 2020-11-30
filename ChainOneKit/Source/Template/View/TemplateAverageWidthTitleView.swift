@@ -10,7 +10,9 @@
 import UIKit
 
 protocol TemplateViewAverageWidthTitleProtocol: class {
+    /// 标题点击回调
     func titleView(_ titleView: TemplateViewAverageWidthTitle, didClicked title: String, at index: Int) -> Void
+
 }
 
 
@@ -72,6 +74,7 @@ class TemplateViewAverageWidthTitle: UIView {
 
 // MARK: - Internal Function
 extension TemplateViewAverageWidthTitle {
+
     class func loadXib() -> TemplateViewAverageWidthTitle? {
         return Bundle.main.loadNibNamed("TemplateViewAverageWidthTitle", owner: nil, options: nil)?.first as? TemplateViewAverageWidthTitle
     }
@@ -90,6 +93,7 @@ extension TemplateViewAverageWidthTitle {
 
 // MARK: - LifeCircle Function
 extension TemplateViewAverageWidthTitle {
+
     override func awakeFromNib() {
         super.awakeFromNib()
         self.initialInAwakeNib()
@@ -113,6 +117,7 @@ extension TemplateViewAverageWidthTitle {
 //            make.edges.equalToSuperview()
 //        }
     }
+    /// mainView布局
     fileprivate func initialMainView(_ mainView: UIView) -> Void {
         // buttons
         let btnMaxW: CGFloat = kScreenWidth / CGFloat(self.titles.count)
@@ -159,10 +164,12 @@ extension TemplateViewAverageWidthTitle {
 }
 // MARK: - Private UI Xib加载后处理
 extension TemplateViewAverageWidthTitle {
+
     /// awakeNib时的处理
     fileprivate func initialInAwakeNib() -> Void {
         
     }
+
 }
 
 // MARK: - Data Function
@@ -172,6 +179,7 @@ extension TemplateViewAverageWidthTitle {
 
 // MARK: - Event Function
 extension TemplateViewAverageWidthTitle {
+
     /// 按钮点击
     @objc fileprivate func buttonClick(_ button: UIButton) -> Void {
         if button.isSelected {

@@ -11,6 +11,7 @@ import Foundation
 import UIKit
 
 public extension UIButton {
+
     // 带圆角的图片视图(可附加边框border)
     convenience init(font: UIFont? = nil, cornerRadius: CGFloat = 0, borderWidth: CGFloat = 0, borderColor: UIColor = UIColor.clear) {
         self.init(type: .custom)
@@ -25,10 +26,12 @@ public extension UIButton {
         self.layer.cornerRadius = cornerRadius
         self.layer.masksToBounds = true
     }
+
 }
 
 public extension UIButton {
 
+    ///
     func set(title: String?, titleColor: UIColor, image: UIImage? = nil, bgImage: UIImage? = nil, for state: UIControl.State) -> Void {
         self.setTitle(title, for: state)
         self.setTitleColor(titleColor, for: state)
@@ -40,6 +43,7 @@ public extension UIButton {
         //self.setTitleShadowColor(shadowColor, for: sate)
     }
 
+    /// 
     func set(font: UIFont?, cornerRadius: CGFloat = 0, borderWidth: CGFloat = 0, borderColor: UIColor = UIColor.clear) -> Void {
         if let font = font {
             self.titleLabel?.font = font
@@ -49,4 +53,5 @@ public extension UIButton {
         self.layer.borderWidth = borderWidth
         self.layer.borderColor = borderColor.cgColor
     }
+
 }

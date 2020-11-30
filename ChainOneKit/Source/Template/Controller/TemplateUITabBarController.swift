@@ -1,5 +1,5 @@
 //
-//  TemplateControllerTabBar.swift
+//  TemplateUITabBarController.swift
 //  ChainOneKit
 //
 //  Created by 小唐 on 2019/3/5.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TemplateControllerTabBar: UITabBarController {
+class TemplateUITabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

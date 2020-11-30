@@ -39,6 +39,7 @@ public extension UINavigationController {
 
 /// MARK: - 导航栏主题
 public extension UINavigationController {
+
     /// 导航栏主题设置 - 对当前的导航控制器
     func setNavBarTheme(titleFont: UIFont, titleColor: UIColor, tintColor: UIColor, barTintColor: UIColor, isTranslucent: Bool = false, bgImage: UIImage = UIImage(), shadowColor: UIColor = UIColor.clear) -> Void {
         let navigationBar = self.navigationBar
@@ -61,4 +62,5 @@ public extension UINavigationController {
         navigationBar.setBackgroundImage(bgImage, for: UIBarPosition.any, barMetrics: UIBarMetrics.default)
         navigationBar.shadowImage = UIImage.imageWithColor(shadowColor)
     }
+
 }

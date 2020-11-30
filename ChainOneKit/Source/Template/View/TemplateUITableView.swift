@@ -1,5 +1,5 @@
 //
-//  TemplateListView.swift
+//  TemplateUITableView.swift
 //  SwiftKit-XiaoDe
 //
 //  Created by 小唐 on 29/05/2018.
@@ -9,13 +9,18 @@
 
 import UIKit
 
-class TemplateListView: UIView {
+typealias TemplateListView = TemplateUITableView
+class TemplateUITableView: UIView {
     
     // MARK: - Internal Property
+
     // MARK: - Private Property
     
     fileprivate let tableView: UITableView = UITableView(frame: CGRect.zero, style: .plain)
+
     fileprivate var sourceList: [String] = []
+    fileprivate var offset: Int = 0
+    fileprivate let limit: Int = 20
     
     // MARK: - Initialize Function
     init() {
@@ -40,7 +45,7 @@ class TemplateListView: UIView {
 // MARK: - Internal Function
 
 // MARK: - Private  UI
-extension TemplateListView {
+extension TemplateUITableView {
     
     // 界面布局
     fileprivate func initialUI() -> Void {
@@ -63,17 +68,21 @@ extension TemplateListView {
 // MARK: - Extension Function
 
 // MARK: - Delegate Function
+
 // MARK: - <UITableViewDataSource>
-extension TemplateListView: UITableViewDataSource {
-    
+extension TemplateUITableView: UITableViewDataSource {
+
+    ///
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    
+
+    ///
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 25
     }
-    
+
+    ///
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let identifier = "CellIdentifier"
         var cell = tableView.dequeueReusableCell(withIdentifier: identifier)
@@ -89,17 +98,18 @@ extension TemplateListView: UITableViewDataSource {
         return cell!
     }
     
-    
 }
 
 // MARK: - <UITableViewDelegate>
-extension TemplateListView: UITableViewDelegate {
-    
+extension TemplateUITableView: UITableViewDelegate {
+
+    ///
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         //return UITableViewAutomaticDimension
         return 44
     }
-    
+
+    ///
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("didSelectRowAt\(indexPath.row)")
     }

@@ -28,6 +28,7 @@ public extension String {
 
 // MARK: - 字符串裁剪
 public extension String {
+
     /// 裁切字段
     func subString(with range: NSRange) -> String {
         // 注：如果 range.location + range.length > self.count 时，会崩溃
@@ -55,6 +56,7 @@ public extension String {
     func subString(startIndex: String.Index, endIndex: String.Index) -> String {
         return String(self[startIndex ..< endIndex])
     }
+
 }
 
 public extension String {

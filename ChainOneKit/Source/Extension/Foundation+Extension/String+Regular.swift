@@ -11,6 +11,7 @@ import Foundation
 
 // MARK: - 正则表达式判断
 public extension String {
+
     /// 正则匹配判断
     func isMatchRegex(_ strRegex: String) -> Bool {
         //let predicate = NSPredicate(format: "SELF MATCHES %@", strRegex)
@@ -23,15 +24,18 @@ public extension String {
             return true // 检索到合法字段
         }
     }
+
 }
 
 
 // MARK: - 正则表达式应用
 public extension String {
+
     /// 正则匹配判断
     func isPhoneNum() -> Bool {
         // "^1([0-9]{10})$"
         let strRegex: String = "^1\\d{10}$"
         return self.isMatchRegex(strRegex)
     }
+
 }

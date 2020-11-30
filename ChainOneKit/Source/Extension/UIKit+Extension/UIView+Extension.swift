@@ -14,6 +14,7 @@ import UIKit
 // MARK: - Convenience Initialization
 
 public extension UIView {
+
     /// 带背景色的初始化
     convenience init(bgColor: UIColor) {
         self.init(frame: CGRect.zero)
@@ -28,17 +29,20 @@ public extension UIView {
         self.layer.borderWidth = borderWidth
         self.layer.borderColor = borderColor.cgColor
     }
+
 }
 
 // MARK: - ChildView
 
 public extension UIView {
+
     /// 移除所有子视图
     func removeAllSubView() -> Void {
         for view in self.subviews {
             view.removeFromSuperview()
         }
     }
+
 }
 
 // MARK: - RoundCorners
@@ -87,6 +91,7 @@ public extension UIView {
         shapeLayer.path = roundPath.cgPath
         self.layer.mask = shapeLayer
     }
+
 }
 
 // MARK: - Dotted Line 虚线

@@ -1,5 +1,5 @@
 //
-//  TemplateControllerView.swift
+//  TemplateUIViewController.swift
 //  SwiftKit-XiaoDe
 //
 //  Created by 小唐 on 13/02/2018.
@@ -10,8 +10,9 @@
 import UIKit
 
 /// UIViewController 的使用模板
-class TemplateControllerView: UIViewController
+class TemplateUIViewController: UIViewController
 {
+
     // MARK: - Internal Property
     
     // MARK: - Private Property
@@ -25,17 +26,14 @@ class TemplateControllerView: UIViewController
         super.init(coder: aDecoder)
         //fatalError("init(coder:) has not been implemented")
     }
-    
-    //    /// injection回调
-    //    @objc func injected() -> Void {
-    //        self.viewDidLoad()
-    //    }
+
 }
 
 // MARK: - Internal Function
 
 // MARK: - LifeCircle & Override Function
-extension TemplateControllerView {
+extension TemplateUIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialUI()
@@ -46,6 +44,18 @@ extension TemplateControllerView {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
+    /// 控制器的view即将消失
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+    }
+    /// 控制器的view完全显示
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    /// 控制器的view完全消失
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+    }
     /// 控制器的view将要布局子控件
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
@@ -54,24 +64,17 @@ extension TemplateControllerView {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
     }
-    /// 控制器的view完全显示
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-    /// 控制器的view即将消失
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-    }
-    /// 控制器的view完全消失
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-    }
     
-    // MARK: - 状态栏显示隐藏
+    // MARK: - 状态栏
     
-    // 隐藏状态栏
+    // 状态栏 显示隐藏
     override var prefersStatusBarHidden: Bool {
         return true
+    }
+    
+    // 状态栏颜色
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return UIStatusBarStyle.lightContent
     }
     
     // MARK: - 横竖屏切换
@@ -92,45 +95,68 @@ extension TemplateControllerView {
 }
 
 // MARK: - UI
-extension TemplateControllerView {
+extension TemplateUIViewController {
+
     /// 页面布局
     fileprivate func initialUI() -> Void {
         self.view.backgroundColor = UIColor.white
+        // navBar
+        self.navigationItem.title = "Template"
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: self, action: #selector(navBarLeftItemClick))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "明细", style: .plain, target: self, action: #selector(navBarLeftItemClick))
+        //
     }
+
 }
 
 // MARK: - Data(数据处理与加载)
-extension TemplateControllerView {
+extension TemplateUIViewController {
+
     /// 默认数据加载
     fileprivate func initialDataSource() -> Void {
+        self.setupAsDemo()
+    }
+    ///
+    fileprivate func setupAsDemo() -> Void {
         
     }
+
 }
 
 // MARK: - Event(事件响应)
-extension TemplateControllerView {
-    
+extension TemplateUIViewController {
+
+    /// 导航栏 左侧按钮点击响应
+    @objc fileprivate func navBarLeftItemClick() -> Void {
+        print("TemplateUIViewController navBarLeftItemClick")
+        self.navigationController?.popViewController(animated: true)
+    }
+    /// 导航栏 右侧侧按钮点击响应
+    @objc fileprivate func navBarRightItemClick() -> Void {
+        print("TemplateUIViewController navBarRightItemClick")
+    }
+
 }
 
 // MARK: - Enter Page
-extension TemplateControllerView {
+extension TemplateUIViewController {
     
 }
 
 // MARK: - Notification
-extension TemplateControllerView {
+extension TemplateUIViewController {
     
 }
 
 // MARK: - Extension Function
-extension TemplateControllerView {
+extension TemplateUIViewController {
     
 }
 
 // MARK: - Delegate Function
 
 // MARK: - <>
-extension TemplateControllerView {
+extension TemplateUIViewController {
     
 }
 

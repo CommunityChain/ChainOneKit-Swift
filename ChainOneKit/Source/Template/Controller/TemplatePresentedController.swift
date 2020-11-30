@@ -1,5 +1,5 @@
 //
-//  TemplateControllerPresented.swift
+//  TemplatePresentedController.swift
 //  ChainOneKit
 //
 //  Created by 小唐 on 2019/1/21.
@@ -9,8 +9,9 @@
 
 import UIKit
 
-class TemplateControllerPresented: UIViewController
+class TemplatePresentedController: UIViewController
 {
+
     // MARK: - Internal Property
     
     // MARK: - Private Property
@@ -26,67 +27,71 @@ class TemplateControllerPresented: UIViewController
         //super.init(coder: aDecoder)
         fatalError("init(coder:) has not been implemented")
     }
-    
-//    /// injection回调
-//    @objc func injected() -> Void {
-//        self.viewDidLoad()
-//    }
+
 }
 
 // MARK: - Internal Function
 
 // MARK: - LifeCircle Function
-extension TemplateControllerPresented {
+extension TemplatePresentedController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialUI()
         self.initialDataSource()
     }
-    
+
+    /// 控制器的view将要显示
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
+    /// 控制器的view即将消失
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
     }
+
 }
 
 // MARK: - UI
-extension TemplateControllerPresented {
+extension TemplatePresentedController {
+
     /// 页面布局
     fileprivate func initialUI() -> Void {
         self.view.backgroundColor = UIColor.white
         
     }
+
 }
 
 // MARK: - Data(数据处理与加载)
-extension TemplateControllerPresented {
+extension TemplatePresentedController {
+
     /// 默认数据加载
     fileprivate func initialDataSource() -> Void {
         
     }
+
 }
 
 // MARK: - Event(事件响应)
-extension TemplateControllerPresented {
+extension TemplatePresentedController {
     
 }
 
 // MARK: - Notification
-extension TemplateControllerPresented {
+extension TemplatePresentedController {
     
 }
 
 // MARK: - Extension Function
-extension TemplateControllerPresented {
+extension TemplatePresentedController {
     
 }
 
 // MARK: - Delegate Function
 
 // MARK: - <>
-extension TemplateControllerPresented {
+extension TemplatePresentedController {
     
 }
 

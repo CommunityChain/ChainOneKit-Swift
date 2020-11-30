@@ -49,6 +49,7 @@ public extension Date {
 }
 
 public extension Date {
+
     /// 是否早于某个时间
     func isEarly(than compareDate: Date) -> Bool {
         return self < compareDate
@@ -58,6 +59,7 @@ public extension Date {
     func isLate(than compareDate: Date) -> Bool {
         return self >= compareDate
     }
+
 }
 
 public extension Date {

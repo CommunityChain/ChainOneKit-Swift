@@ -14,20 +14,17 @@ Pod::Spec.new do |spec|
 
   spec.swift_version = '5.0'
 
-  spec.subspec "FoundationExtension" do |foundationExtension|
-    foundationExtension.source_files = 'ChainOneKit/Source/Extension/Foundation+Extension/**/*'
-  end
-  spec.subspec "UIKitExtension" do |uikitExtension|
-    uikitExtension.source_files = 'ChainOneKit/Source/Extension/UIKit+Extension/**/*'
-  end
+  spec.subspec "Extension" do |extension|
+    extension.source_files = 'ChainOneKit/Source/Extension/Foundation+Extension/**/*',
+    'ChainOneKit/Source/Extension/UIKit+Extension/**/*'
+  end  
   spec.subspec "Constant" do |constant|
     constant.source_files = 'ChainOneKit/Source/Constant/**/*'
-    constant.dependency 'ChainOneKit-Swift/UIKitExtension'
+    constant.dependency 'ChainOneKit-Swift/Extension'
   end
   spec.subspec "Common" do |common|
     common.source_files = 'ChainOneKit/Source/Common/View/**/*'
-    common.dependency 'ChainOneKit-Swift/FoundationExtension'
-    common.dependency 'ChainOneKit-Swift/UIKitExtension'
+    common.dependency 'ChainOneKit-Swift/Extension'
     common.dependency 'ChainOneKit-Swift/Constant'
   end
   spec.subspec "XDPackageTimer" do |timer|
@@ -38,7 +35,7 @@ Pod::Spec.new do |spec|
   end
   spec.subspec "Helper" do |helper|
     helper.source_files = 'ChainOneKit/Source/Helper/**/*'
-    helper.dependency 'ChainOneKit-Swift/FoundationExtension'
+    helper.dependency 'ChainOneKit-Swift/Extension'
   end
   spec.subspec "XDWeb" do |web|
     web.source_files = 'ChainOneKit/Source/XDWeb/**/*'

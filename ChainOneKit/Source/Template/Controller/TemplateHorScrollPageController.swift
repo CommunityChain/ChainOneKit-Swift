@@ -1,5 +1,5 @@
 //
-//  TemplateControllerHorScrollPage.swift
+//  TemplateHorScrollPageController.swift
 //  ChainOneKit
 //
 //  Created by 小唐 on 2019/1/18.
@@ -9,15 +9,16 @@
 
 import UIKit
 
-class TemplateControllerHorScrollPage: UIViewController
+class TemplateHorScrollPageController: UIViewController
 {
+
     // MARK: - Internal Property
     
     // MARK: - Private Property
-    fileprivate let scrollView: UIScrollView = UIScrollView()
-    fileprivate let followListVC = TemplateControllerTableView()
-    fileprivate let recommentListVC = TemplateControllerTableView()
-    fileprivate let aroundListVC = TemplateControllerTableView()
+    fileprivate let scrollView: UIScrollView = UIScrollView.init()
+    fileprivate let followListVC = TemplateUITableViewController.init()
+    fileprivate let recommentListVC = TemplateUITableViewController.init()
+    fileprivate let aroundListVC = TemplateUITableViewController.init()
     
     fileprivate let titles: [String] = ["关注", "推荐", "附近"]
     fileprivate let titleSegment: UISegmentedControl = UISegmentedControl(items: ["关注", "推荐", "附近"])
@@ -43,33 +44,34 @@ class TemplateControllerHorScrollPage: UIViewController
         super.init(coder: aDecoder)
         //fatalError("init(coder:) has not been implemented")
     }
-    
-    //    /// injection回调
-    //    @objc func injected() -> Void {
-    //        self.viewDidLoad()
-    //    }
+
 }
 
 // MARK: - Internal Function
 
 // MARK: - LifeCircle Function
-extension TemplateControllerHorScrollPage {
+extension TemplateHorScrollPageController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialUI()
         self.initialDataSource()
     }
     
+    /// 控制器的view将要显示
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
+    /// 控制器的view即将消失
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
     }
+
 }
 
 // MARK: - UI
-extension TemplateControllerHorScrollPage {
+extension TemplateHorScrollPageController {
+
     /// 页面布局
     fileprivate func initialUI() -> Void {
         self.view.backgroundColor = UIColor.white
@@ -79,7 +81,6 @@ extension TemplateControllerHorScrollPage {
         self.titleSegment.setTitleTextAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)], for: .selected)
         self.titleSegment.tintColor = UIColor.blue
         self.titleSegment.addTarget(self, action: #selector(segmentClick(_:)), for: .valueChanged)
-        
         self.navigationItem.titleView = self.titleSegment
         // scrollView
         self.view.addSubview(self.scrollView)
@@ -116,43 +117,48 @@ extension TemplateControllerHorScrollPage {
 }
 
 // MARK: - Data(数据处理与加载)
-extension TemplateControllerHorScrollPage {
+extension TemplateHorScrollPageController {
+
     /// 默认数据加载
     fileprivate func initialDataSource() -> Void {
         // 默认选择
         self.titleSegment.selectedSegmentIndex = 0
         self.selectedIndex = 0
     }
+
 }
 
 // MARK: - Event(事件响应)
-extension TemplateControllerHorScrollPage {
+extension TemplateHorScrollPageController {
     
     /// segment点击响应
     @objc fileprivate func segmentClick(_ segment: UISegmentedControl) -> Void {
         let index = segment.selectedSegmentIndex
         self.selectedIndex = index
     }
+
 }
 
 // MARK: - Notification
-extension TemplateControllerHorScrollPage {
+extension TemplateHorScrollPageController {
     
 }
 
 // MARK: - Extension Function
-extension TemplateControllerHorScrollPage {
+extension TemplateHorScrollPageController {
     
 }
 
 // MARK: - Delegate Function
 
 // MARK: - <UIScrollViewDelegate>
-extension TemplateControllerHorScrollPage: UIScrollViewDelegate {
+extension TemplateHorScrollPageController: UIScrollViewDelegate {
+
     /// 滑动结束 回调
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let scrollIndex: Int = Int(scrollView.contentOffset.x / kScreenWidth)
         self.selectedIndex = scrollIndex
     }
+
 }
 

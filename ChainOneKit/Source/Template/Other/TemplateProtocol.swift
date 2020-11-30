@@ -30,23 +30,31 @@ Swift关于可选协议实现的方案
  **/
 
 protocol TemplateOptionalProtocol: class {
+
     func mustFunction() -> Void
     // optional
     func optionalFunction() -> Void
+
 }
 extension TemplateOptionalProtocol {
+
     func optionalFunction() -> Void {
         
     }
+
 }
 
 protocol TemplateOptionalProtocol2 {
+
     func mustFunction() -> Void
+
 }
 extension TemplateOptionalProtocol2 {
+
     func optionalFunction() -> Void {
         
     }
+
 }
 
 
@@ -54,27 +62,33 @@ protocol TemplateOptionalProtocol3 {
     func mustFunction() -> Void
 }
 extension TemplateOptionalProtocol3 where Self: UIViewController {
+
     func optionalFunction() -> Void {
         
     }
+
 }
 
 class TemplateClass1 {
     
 }
 extension TemplateClass1: TemplateOptionalProtocol {
+
     func mustFunction() -> Void {
         
     }
+
 }
 
 class TemplateClass2 {
     
 }
 extension TemplateClass2: TemplateOptionalProtocol2 {
+
     func mustFunction() -> Void {
         
     }
+
 }
 
 
@@ -83,9 +97,11 @@ class TemplateClass3: UIViewController {
 
 }
 extension TemplateClass3: TemplateOptionalProtocol3 {
+
     func mustFunction() -> Void {
 
     }
+
 }
 
 

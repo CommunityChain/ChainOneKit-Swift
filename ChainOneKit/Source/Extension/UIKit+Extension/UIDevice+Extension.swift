@@ -43,6 +43,7 @@ public let kiPhoneXRScreenHeight: CGFloat = 896
 
 // MARK: - 机型判断 根据屏蔽尺寸判断/还可以根据命名
 public extension UIDevice {
+
     /// iPhoneX判断
     func isiPhoneX() -> Bool {
         let resultFlag: Bool = UIScreen.main.bounds.size.equalTo(kiPhoneXScreenSize)
@@ -115,10 +116,12 @@ public extension UIDevice {
 
 // MARK: - 设备支持判断
 public extension UIDevice {
+
     // MARK: - touchID
     func isSupportTouchID() -> Bool {
         let context = LAContext()
         var error: NSError?
         return context.canEvaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, error: &error)
     }
+
 }

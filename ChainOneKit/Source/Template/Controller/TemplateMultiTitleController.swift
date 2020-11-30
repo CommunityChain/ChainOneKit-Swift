@@ -9,7 +9,7 @@
 
 import UIKit
 
-class TemplateControllerMultiTitle: UIViewController {
+class TemplateMultiTitleController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

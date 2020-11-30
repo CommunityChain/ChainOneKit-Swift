@@ -12,6 +12,7 @@ import UIKit
 
 public extension UILabel {
 
+    /// 便利构造
     convenience init(text: String?, font: UIFont, textColor: UIColor, alignment: NSTextAlignment = .left, numberOfLines: Int = 1) {
         self.init(frame: CGRect.zero)
         self.textColor = textColor
