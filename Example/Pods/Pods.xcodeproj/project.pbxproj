@@ -28,6 +28,9 @@
 		45F1588A72407D43119AEAAFC4D714CA /* TemplateSingleInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A40AA0C2774CC906508D1594F4EF0F1 /* TemplateSingleInstance.swift */; };
 		4A181C07094CA29791E705E0EF22214E /* TemplateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32FCE1C0B3B97E272E28D13D0C930C4 /* TemplateProtocol.swift */; };
 		4B9C74F380531666B6BCDC7819C48107 /* ChainOneKit-Swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5703740DB52DE6E67FC31DBE53D471F0 /* ChainOneKit-Swift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5383F79B2576266400E989E5 /* String+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5383F79A2576266400E989E5 /* String+URL.swift */; };
+		5383F7A32576271500E989E5 /* String+PinYin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5383F7A22576271500E989E5 /* String+PinYin.swift */; };
+		5383F7A82576284400E989E5 /* UIFont+PingFangSC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5383F7A72576284400E989E5 /* UIFont+PingFangSC.swift */; };
 		5644D484824DD6CA05FBFCCD32743E0B /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13904080348A4BB85F3E1D10AFF7B1B /* UIImageView+Extension.swift */; };
 		56A1668F8454C1D20587FEB349ACF935 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		5BAFDE912D39DF8856C4CC02CAD3683A /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994FD9005907F91A0CA6FD8B906508A9 /* Double+Extension.swift */; };
@@ -122,6 +125,9 @@
 		4F47145EC98DF0A2F407B9DE59979481 /* NoHighlightedButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NoHighlightedButton.swift; path = ChainOneKit/Source/Common/View/NoHighlightedButton.swift; sourceTree = "<group>"; };
 		4F6A1C0B4D811F39C7BCD5854AF710FE /* Pods-ChainOneKitTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ChainOneKitTests-umbrella.h"; sourceTree = "<group>"; };
 		50593A260A49885C87065FC4D7B8D672 /* Pods-ChainOneKitTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ChainOneKitTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		5383F79A2576266400E989E5 /* String+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+URL.swift"; sourceTree = "<group>"; };
+		5383F7A22576271500E989E5 /* String+PinYin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+PinYin.swift"; sourceTree = "<group>"; };
+		5383F7A72576284400E989E5 /* UIFont+PingFangSC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+PingFangSC.swift"; sourceTree = "<group>"; };
 		565B173B7A4CA62861615B6DE9145B61 /* TemplateMJRefreshHeader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TemplateMJRefreshHeader.swift; sourceTree = "<group>"; };
 		5703740DB52DE6E67FC31DBE53D471F0 /* ChainOneKit-Swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ChainOneKit-Swift-umbrella.h"; sourceTree = "<group>"; };
 		57D86018FA150173F00E1DCF074320A2 /* UINavigationController+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extension.swift"; sourceTree = "<group>"; };
@@ -283,6 +289,7 @@
 				FA5D1655DFA309B9A80813C8B7E452D2 /* UIView+Extension.swift */,
 				CB17F8367A94D641B092A5B06D51C4FB /* UIViewController+Extension.swift */,
 				2660C59D649786ED658B34A145E8002F /* UIViewController+UMExtension.swift */,
+				5383F7A72576284400E989E5 /* UIFont+PingFangSC.swift */,
 			);
 			name = "UIKit+Extension";
 			path = "ChainOneKit/Source/Extension/UIKit+Extension";
@@ -308,6 +315,8 @@
 				D0B8B38F4B256226799B6309E3287799 /* String+Extension.swift */,
 				F09038CDA8BE878128DDC48DEE8D5C97 /* String+Localizable.swift */,
 				E60D72D3458B2E62BC643342EA28A71C /* String+Regular.swift */,
+				5383F79A2576266400E989E5 /* String+URL.swift */,
+				5383F7A22576271500E989E5 /* String+PinYin.swift */,
 				B27CC137F61FF70FD3D5C15BB4F3FA83 /* Timer+Extension.swift */,
 			);
 			name = "Foundation+Extension";
@@ -661,6 +670,7 @@
 				1B7EA9C890C8DCB4CBB69BC092530582 /* ChainOneKit-Swift-dummy.m in Sources */,
 				354BCBF11FE1F971CB0FBF5BEEDB9B78 /* Constant.swift in Sources */,
 				0C41961985066B5431A07FABB2BC29DF /* Date+Extension.swift in Sources */,
+				5383F7A82576284400E989E5 /* UIFont+PingFangSC.swift in Sources */,
 				5BAFDE912D39DF8856C4CC02CAD3683A /* Double+Extension.swift in Sources */,
 				D8DDEF80209FB6B101BAB25EDF6D9815 /* FileManager+Extension.swift in Sources */,
 				ACF540F628503EA7B6396BE9CC5B116F /* NoHighlightedButton.swift in Sources */,
@@ -685,6 +695,7 @@
 				FD0854826EA2CDEC9D8593B5E502BD2D /* TemplateUICollectionReusableView.swift in Sources */,
 				8FDD9B761CF6EC0EAAAC2A9A3AC14D81 /* TemplateUICollectionViewCell.swift in Sources */,
 				62686BA8E5FD60AE289D831F3CE73E31 /* TemplateUICollectionViewController.swift in Sources */,
+				5383F7A32576271500E989E5 /* String+PinYin.swift in Sources */,
 				FC10D68471CE1E00BE5BF1C0650E99C4 /* TemplateUIControl.swift in Sources */,
 				C4F75BD262F1C7870B2E3078044E7904 /* TemplateUITabBarController.swift in Sources */,
 				9C4D71FE205B2C3C45284ACA78E5BA9A /* TemplateUITableHeaderFooterView.swift in Sources */,
@@ -700,6 +711,7 @@
 				3764CDA96433C279DB99A68497807F27 /* UIColor+Extension.swift in Sources */,
 				9807BD7089F1DA38A7BBC81DC8263808 /* UIDevice+Extension.swift in Sources */,
 				A1E8E35A1906B32A13F2D8F79D920DC5 /* UIImage+Extension.swift in Sources */,
+				5383F79B2576266400E989E5 /* String+URL.swift in Sources */,
 				5644D484824DD6CA05FBFCCD32743E0B /* UIImageView+Extension.swift in Sources */,
 				5C48A377122B27E6BFABB41F98272292 /* UILabel+Extension.swift in Sources */,
 				AB2F7AA7F557F694AF716385E3F260E0 /* UINavigationController+Extension.swift in Sources */,

@@ -42,6 +42,14 @@ public extension String {
         let endIndex: String.Index = self.index(self.startIndex, offsetBy: Int(location + length))
         return String(self[startIndex ..< endIndex])
     }
+    /// 字符串裁剪
+    func subString(location: UInt = 0, maxLen: UInt) -> String {
+        // 注：解决 location + length > self.count 时崩溃异常
+        let startIndex: String.Index = self.index(self.startIndex, offsetBy: Int(location))
+        let offset: Int = Int(location + maxLen) <= self.count ? Int(maxLen) : max(self.count - Int(location), 0)
+        let endIndex: String.Index = self.index(self.startIndex, offsetBy: Int(location) + offset)
+        return String(self[startIndex ..< endIndex])
+    }
     /// 重载
     func subString(location: UInt = 0, offset: UInt) -> String {
         return self.subString(location: location, length: offset)

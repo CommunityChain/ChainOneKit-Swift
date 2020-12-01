@@ -33,3 +33,21 @@ public extension NSMutableAttributedString {
     }
 
 }
+
+public extension NSMutableAttributedString {
+    
+    /// 快捷属性
+    class func mutableAttribute(str: String, font: UIFont, color: UIColor) -> NSMutableAttributedString {
+        let attText: NSMutableAttributedString = NSMutableAttributedString.init(string: str, attributes: [NSAttributedString.Key.font: font, NSAttributedString.Key.foregroundColor: color])
+        return attText
+    }
+    class func mutableAttribute(_ atts: [(str: String, font: UIFont, color: UIColor)]) -> NSMutableAttributedString {
+        let attText: NSMutableAttributedString = NSMutableAttributedString.init()
+        for att in atts {
+            let itemAtt = NSAttributedString.init(string: att.str, attributes: [NSAttributedString.Key.font: att.font, NSAttributedString.Key.foregroundColor: att.color])
+            attText.append(itemAtt)
+        }
+        return attText
+    }
+
+}

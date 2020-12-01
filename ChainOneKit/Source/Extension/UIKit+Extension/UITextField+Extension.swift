@@ -28,5 +28,10 @@ public extension UITextField {
         self.textColor = textColor
         self.textAlignment = alignment
     }
+    
+    func setPlaceHolder(_ placeholder: String, font: UIFont, color: UIColor) -> Void {
+        //self.placeholder = nil
+        self.attributedPlaceholder = NSAttributedString.init(string: placeholder, attributes: [NSAttributedString.Key.font: font, NSAttributedString.Key.foregroundColor: color])
+    }
 
 }

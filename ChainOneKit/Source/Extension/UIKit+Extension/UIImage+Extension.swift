@@ -14,21 +14,30 @@ import UIKit
 
 public extension UIImage {
 
-}
+    // 根据图片的中心点去拉伸图片并返回
+    func resizableImageWithCenterPoint() -> UIImage {
+        let top = self.size.height * 0.5 - 1.0      // 顶端盖高度
+        let bottom = top                            // 底端
+        let left = self.size.width * 0.5 - 1.0      // 左
+        let right = left                            // 右
+        let insets = UIEdgeInsets.init(top: top, left: left, bottom: bottom, right: right)
+        let image = self.resizableImage(withCapInsets: insets, resizingMode: UIImage.ResizingMode.stretch)
 
-public extension UIImage {
-    /// 图片的机型适配
-//    public class func imageNamedOnDevice(name: String) -> UIImage {
-//        var image:String = name
-////        if QJWDevice.isPhone6Plus() {
-////            image = String(format: "%@-6p", name)
-////        } else if QJWDevice.isPhone5() {
-////            image = String(format: "%@-5", name)
-////        } else {
-////            image = String(format: "%@-6", name)
-////        }
-//        return UIImage(named: String(format: "%@.png", image))!
-//    }
+        return image
+    }
+    
+    // 根据图片的固定点去拉伸图片并返回
+    func resizableImage(with point: CGPoint) -> UIImage {
+        let top = point.y                           // 顶端盖高度
+        let bottom = self.size.height - top - 1.0   // 底端
+        let left = point.x                          // 左
+        let right = self.size.width - left - 1.0    // 右
+        let insets = UIEdgeInsets.init(top: top, left: left, bottom: bottom, right: right)
+        let image = self.resizableImage(withCapInsets: insets, resizingMode: UIImage.ResizingMode.stretch)
+
+        return image
+    }
+
 }
 
 public extension UIImage {
@@ -49,15 +58,14 @@ public extension UIImage {
         return image!
     }
 
-    // 根据图片的中心点去拉伸图片并返回
-    func resizableImageWithCenterPoint() -> UIImage {
-        let top = self.size.height * 0.5 - 1.0      // 顶端盖高度
-        let bottom = top                            // 底端
-        let left = self.size.width * 0.5 - 1.0      // 左
-        let right = left                            // 右
-        let insets = UIEdgeInsets.init(top: top, left: left, bottom: bottom, right: right)
-        let image = self.resizableImage(withCapInsets: insets, resizingMode: UIImage.ResizingMode.stretch)
-
+    /// 将 view 的显示效果转成一张 image
+    class func getImageFromView(_ view: UIView) -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(view.bounds.size, false, UIScreen.main.scale)
+        if let context = UIGraphicsGetCurrentContext() {
+            view.layer.render(in: context)
+        }
+        let image: UIImage? = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
         return image
     }
 

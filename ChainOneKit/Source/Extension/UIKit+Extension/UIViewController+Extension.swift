@@ -9,6 +9,19 @@ import UIKit
 
 public extension UIViewController {
 
+    /// 顶部控制器
+    var topVC: UIViewController {
+        var topVC: UIViewController = self
+        if let presendVC = self.presentedViewController {
+            topVC = presendVC
+        } else if let tabVC = self as? UITabBarController, let selectedVC = tabVC.selectedViewController {
+            topVC = selectedVC.topVC
+        } else if let navVC = self as? UINavigationController, let lastVC = navVC.children.last {
+            topVC = lastVC
+        }
+        return topVC
+    }
+    
     /// 通过控制器名字构建控制器
     static func controllerWithName(_ name: String) -> UIViewController {
         // 1. Swift中新增了命名空间，通过字符串创建控制器需要带上命名空间
