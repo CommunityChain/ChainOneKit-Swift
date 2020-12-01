@@ -30,8 +30,11 @@ class TemplateUIViewController: UIViewController
 }
 
 // MARK: - Internal Function
+extension TemplateUIViewController {
+    
+}
 
-// MARK: - LifeCircle & Override Function
+// MARK: - LifeCircle/Override Function
 extension TemplateUIViewController {
 
     override func viewDidLoad() {
@@ -94,7 +97,7 @@ extension TemplateUIViewController {
     
 }
 
-// MARK: - UI
+// MARK: - UI Function
 extension TemplateUIViewController {
 
     /// 页面布局
@@ -109,7 +112,7 @@ extension TemplateUIViewController {
 
 }
 
-// MARK: - Data(数据处理与加载)
+// MARK: - Data Function
 extension TemplateUIViewController {
 
     /// 默认数据加载
@@ -123,7 +126,7 @@ extension TemplateUIViewController {
 
 }
 
-// MARK: - Event(事件响应)
+// MARK: - Event Function
 extension TemplateUIViewController {
 
     /// 导航栏 左侧按钮点击响应
@@ -138,12 +141,17 @@ extension TemplateUIViewController {
 
 }
 
+// MARK: - Request Function
+extension TemplateUIViewController {
+    
+}
+
 // MARK: - Enter Page
 extension TemplateUIViewController {
     
 }
 
-// MARK: - Notification
+// MARK: - Notification Function
 extension TemplateUIViewController {
     
 }

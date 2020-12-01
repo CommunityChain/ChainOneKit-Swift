@@ -38,7 +38,7 @@ class TemplateUITableViewController: UIViewController
 
 // MARK: - Internal Function
 
-// MARK: - LifeCircle Function
+// MARK: - LifeCircle/Override Function
 extension TemplateUITableViewController {
 
     override func viewDidLoad() {
@@ -58,7 +58,7 @@ extension TemplateUITableViewController {
 
 }
 
-// MARK: - UI
+// MARK: - UI Function
 extension TemplateUITableViewController {
     /// 界面布局
     fileprivate func initialUI() -> Void {
@@ -68,30 +68,34 @@ extension TemplateUITableViewController {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: self, action: #selector(navBarLeftItemClick))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "明细", style: .plain, target: self, action: #selector(navBarLeftItemClick))
         // 2. tableView
-        self.view.addSubview(tableView)
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.separatorStyle = .none
-        tableView.separatorInset = UIEdgeInsets.zero
-        tableView.tableFooterView = UIView()
-        tableView.estimatedRowHeight = 250
-        tableView.showsVerticalScrollIndicator = false
-        //tableView.mj_header =
-        //tableView.mj_footer =
-        //tableView.mj_footer.isHidden = true
-        //tableView.mj_header = XDRefreshHeader(refreshingTarget: self, refreshingAction: #selector(headerRefresh))
-        //tableView.mj_footer = XDRefreshFooter(refreshingTarget: self, refreshingAction: #selector(footerLoadMore))
-        //tableView.mj_header.isHidden = false
-        //tableView.mj_footer.isHidden = true
-        tableView.frame = self.view.bounds
-//        tableView.snp.makeConstraints { (make) in
+        self.view.addSubview(self.tableView)
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
+        self.tableView.separatorStyle = .none
+        self.tableView.separatorInset = UIEdgeInsets.zero
+        self.tableView.tableFooterView = UIView()
+        self.tableView.estimatedRowHeight = 250
+        self.tableView.showsVerticalScrollIndicator = false
+        self.tableView.backgroundColor = UIColor.white
+        //self.tableView.mj_header = XDRefreshHeader(refreshingTarget: self, refreshingAction: #selector(headerRefresh))
+        //self.tableView.mj_footer = XDRefreshFooter(refreshingTarget: self, refreshingAction: #selector(footerLoadMore))
+        //self.tableView.mj_header.isHidden = false
+        //self.tableView.mj_footer.isHidden = true
+        self.tableView.frame = self.view.bounds
+//        self.tableView.snp.makeConstraints { (make) in
 //            make.edges.equalToSuperview()
 //        }
+        // 顶部位置 的版本适配
+        if #available(iOS 11.0, *) {
+            self.tableView.contentInsetAdjustmentBehavior = .never
+        } else if #available(iOS 9.0, *) {
+            self.automaticallyAdjustsScrollViewInsets = false
+        }
     }
 
 }
 
-// MARK: - Data(数据处理与加载)
+// MARK: - Data Function
 extension TemplateUITableViewController {
 
     // MARK: - Private  数据处理与加载
@@ -109,7 +113,7 @@ extension TemplateUITableViewController {
 
 }
 
-// MARK: - Event(事件响应)
+// MARK: - Event Function
 extension TemplateUITableViewController {
 
     /// 导航栏 左侧按钮点击响应
@@ -133,7 +137,7 @@ extension TemplateUITableViewController {
     
 }
 
-// MARK; - Request(网络请求)
+// MARK: - Request Function
 extension TemplateUITableViewController {
 
     /// 下拉刷新请求
@@ -184,12 +188,12 @@ extension TemplateUITableViewController {
     
 }
 
-// MARK: - Notification
+// MARK: - Notification Function
 extension TemplateUITableViewController {
     
 }
 
-// MARK: - Extension
+// MARK: - Extension Function
 extension TemplateUITableViewController {
     
 }

@@ -10,6 +10,7 @@
 import Foundation
 import UIKit
 
+///
 class TemplateUIControl: UIControl
 {
     
@@ -53,10 +54,16 @@ class TemplateUIControl: UIControl
 }
 
 // MARK: - Internal Function
+extension TemplateUIControl {
+    
+}
 
-// MARK: - Override Function
+// MARK: - LifeCycle/Override Function
+extension TemplateUIControl {
+    
+}
 
-// MARK: - Private  UI
+// MARK: - UI Function
 extension TemplateUIControl {
 
     /// 界面布局
@@ -79,7 +86,7 @@ extension TemplateUIControl {
 
 }
 
-// MARK: - Private  数据(处理 与 加载)
+// MARK: - Data Function
 extension TemplateUIControl {
 
     /// 数据加载
@@ -93,6 +100,12 @@ extension TemplateUIControl {
 
 }
 
-// MARK: - Private  事件
+// MARK: - Event Function
+
+// MARK: - Notification Function
+
+// MARK: - Extension Function
+
+// MARK: - Delegate Function
 
 

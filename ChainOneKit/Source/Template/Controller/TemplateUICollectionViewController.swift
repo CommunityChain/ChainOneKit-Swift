@@ -46,8 +46,11 @@ class TemplateUICollectionViewController: UIViewController {
 }
 
 // MARK: - Internal Function
+extension TemplateUICollectionViewController {
+    
+}
 
-// MARK: - LifeCircle Function
+// MARK: - LifeCircle/Override Function
 extension TemplateUICollectionViewController {
 
     override func viewDidLoad() {
@@ -67,7 +70,7 @@ extension TemplateUICollectionViewController {
 
 }
 
-// MARK: - UI
+// MARK: - UI Function
 extension TemplateUICollectionViewController {
 
     /// 页面布局
@@ -101,7 +104,7 @@ extension TemplateUICollectionViewController {
 
 }
 
-// MARK: - Data(数据处理与加载)
+// MARK: - Data Function
 extension TemplateUICollectionViewController {
 
     // MARK: - Private  数据处理与加载
@@ -119,7 +122,7 @@ extension TemplateUICollectionViewController {
     
 }
 
-// MARK: - Event(事件响应)
+// MARK: - Event Function
 extension TemplateUICollectionViewController {
 
     /// 导航栏 左侧按钮点击响应
@@ -143,7 +146,7 @@ extension TemplateUICollectionViewController {
 
 }
 
-// MARK: - Request(网络请求)
+// MARK: - Request Function
 extension TemplateUICollectionViewController {
 
     /// 下拉刷新请求
@@ -191,7 +194,12 @@ extension TemplateUICollectionViewController {
 
 }
 
-// MARK: - Notification
+// MARK: - Enter Page
+extension TemplateUICollectionViewController {
+    
+}
+
+// MARK: - Notification Function
 extension TemplateUICollectionViewController {
     
 }
@@ -252,6 +260,7 @@ extension TemplateUICollectionViewController: UICollectionViewDelegate {
     
 }
 
+// MARK: - <UICollectionViewDelegateFlowLayout>
 extension TemplateUICollectionViewController: UICollectionViewDelegateFlowLayout {
 
     /// 定义每个UICollectionViewCell 的大小

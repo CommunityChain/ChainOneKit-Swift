@@ -10,6 +10,7 @@
 import UIKit
 
 protocol TemplateViewAverageWidthTitleProtocol: class {
+
     /// 标题点击回调
     func titleView(_ titleView: TemplateViewAverageWidthTitle, didClicked title: String, at index: Int) -> Void
 
@@ -91,7 +92,7 @@ extension TemplateViewAverageWidthTitle {
     
 }
 
-// MARK: - LifeCircle Function
+// MARK: - LifeCircle/Override Function
 extension TemplateViewAverageWidthTitle {
 
     override func awakeFromNib() {
@@ -106,16 +107,16 @@ extension TemplateViewAverageWidthTitle {
     }
     
 }
-// MARK: - Private UI 手动布局
+// MARK: - UI Function
 extension TemplateViewAverageWidthTitle {
     
     /// 界面布局
     fileprivate func initialUI() -> Void {
         self.addSubview(self.mainView)
         self.initialMainView(self.mainView)
-//        self.mainView.snp.makeConstraints { (make) in
-//            make.edges.equalToSuperview()
-//        }
+        //self.mainView.snp.makeConstraints { (make) in
+        //    make.edges.equalToSuperview()
+        //}
     }
     /// mainView布局
     fileprivate func initialMainView(_ mainView: UIView) -> Void {
@@ -130,10 +131,10 @@ extension TemplateViewAverageWidthTitle {
             button.tag = self.titleBtnTagBase + index
             button.addTarget(self, action: #selector(buttonClick(_:)), for: .touchUpInside)
             button.contentEdgeInsets = UIEdgeInsets.init(top: 0, left: 20, bottom: 0, right: 20)
-//            button.snp.makeConstraints { (make) in
-//                make.top.bottom.equalToSuperview()
-//                make.centerX.equalTo(btnMaxW * (CGFloat(index) + 0.5))
-//            }
+            //button.snp.makeConstraints { (make) in
+            //    make.top.bottom.equalToSuperview()
+            //    make.centerX.equalTo(btnMaxW * (CGFloat(index) + 0.5))
+            //}
         }
         self.squareBtn = (mainView.viewWithTag(self.titleBtnTagBase + 0) as! UIButton)
         self.recommendBtn = (mainView.viewWithTag(self.titleBtnTagBase + 1) as! UIButton)
@@ -142,27 +143,27 @@ extension TemplateViewAverageWidthTitle {
         mainView.addSubview(self.sliderView)
         self.sliderView.backgroundColor = UIColor.green
         self.sliderView.set(cornerRadius: self.sliderViewH * 0.5)
-//        self.sliderView.snp.makeConstraints { (make) in
-//            make.width.equalTo(self.sliderViewW)
-//            make.height.equalTo(self.sliderViewH)
-//            make.bottom.equalToSuperview()
-//            make.centerX.equalTo(self.squareBtn)
-//        }
+        //self.sliderView.snp.makeConstraints { (make) in
+        //    make.width.equalTo(self.sliderViewW)
+        //    make.height.equalTo(self.sliderViewH)
+        //    make.bottom.equalToSuperview()
+        //    make.centerX.equalTo(self.squareBtn)
+        //}
         // 默认选中
         if let selectedBtn = mainView.viewWithTag(self.titleBtnTagBase + self.selectedIndex) as? UIButton {
             selectedBtn.isSelected = true
             self.currentSelectedBtn = selectedBtn
-//            self.sliderView.snp.remakeConstraints { (make) in
-//                make.width.equalTo(self.sliderViewW)
-//                make.height.equalTo(self.sliderViewH)
-//                make.bottom.equalToSuperview()
-//                make.centerX.equalTo(self.squareBtn)
-//            }
+            //self.sliderView.snp.remakeConstraints { (make) in
+            //    make.width.equalTo(self.sliderViewW)
+            //    make.height.equalTo(self.sliderViewH)
+            //    make.bottom.equalToSuperview()
+            //    make.centerX.equalTo(self.squareBtn)
+            //}
         }
     }
     
 }
-// MARK: - Private UI Xib加载后处理
+// MARK: - UI Xib加载后处理
 extension TemplateViewAverageWidthTitle {
 
     /// awakeNib时的处理
@@ -190,12 +191,12 @@ extension TemplateViewAverageWidthTitle {
         button.isSelected = true
         self.currentSelectedBtn = button
         self.selectedIndex = index
-//        self.sliderView.snp.remakeConstraints { (make) in
-//            make.width.equalTo(self.sliderViewW)
-//            make.height.equalTo(self.sliderViewH)
-//            make.bottom.equalToSuperview()
-//            make.centerX.equalTo(button)
-//        }
+        //self.sliderView.snp.remakeConstraints { (make) in
+        //    make.width.equalTo(self.sliderViewW)
+        //    make.height.equalTo(self.sliderViewH)
+        //    make.bottom.equalToSuperview()
+        //    make.centerX.equalTo(button)
+        //}
         UIView.animate(withDuration: 0.25) {
             self.mainView.layoutIfNeeded()
         }

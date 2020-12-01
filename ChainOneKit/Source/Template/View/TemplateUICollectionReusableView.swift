@@ -17,6 +17,7 @@ protocol TemplateUICollectionReusableViewProtocol: class {
 }
 
 typealias TemplateUICollectionHeaderFooterView = TemplateUICollectionReusableView
+///
 class TemplateUICollectionReusableView: UICollectionReusableView {
     
     // MARK: - Internal Property
@@ -35,10 +36,12 @@ class TemplateUICollectionReusableView: UICollectionReusableView {
     
     // MARK: - Private Property
     
-    fileprivate let mainView: UIView = UIView()
+    fileprivate let mainView: UIView = UIView.init()
+    fileprivate let iconView: UIImageView = UIImageView.init()
     fileprivate let titleLabel: UILabel = UILabel.init()
-    fileprivate let moreView: UIButton = UIButton.init(type: .custom)
-    
+    fileprivate let detailLabel: UILabel = UILabel.init()
+    fileprivate let moreBtn: UIButton = UIButton.init(type: .custom)
+
     fileprivate let lrMargin: CGFloat = 12
     
     // MARK: - Initialize Function
@@ -73,7 +76,7 @@ extension TemplateUICollectionReusableView {
 
 }
 
-// MARK: - LifeCircle Function
+// MARK: - LifeCircle/Override Function
 extension TemplateUICollectionReusableView {
 
     override func awakeFromNib() {
@@ -82,7 +85,8 @@ extension TemplateUICollectionReusableView {
     }
 
 }
-// MARK: - Private UI 手动布局
+
+// MARK: - UI Function
 extension TemplateUICollectionReusableView {
     
     /// 界面布局
@@ -95,29 +99,51 @@ extension TemplateUICollectionReusableView {
     }
     /// mainView布局
     fileprivate func initialMainView(_ mainView: UIView) -> Void {
-        mainView.backgroundColor = UIColor.lightGray
-        // 1. titleLabel
+        mainView.backgroundColor = UIColor.white
+        
+        //let iconSize: CGSize = CGSize.init(width: 10, height: 10)
+        //let iconTitleHorMargin: CGFloat = 10
+        //let detailLeftMargin: CGFloat = 100
+        //let moreBtnSize: CGSize = CGSize.init(width: 60, height: 30)
+        // 1. iconView
+        mainView.addSubview(self.iconView)
+        self.iconView.set(cornerRadius: 0)
+        self.iconView.image = UIImage.init(named: "")
+        self.iconView.backgroundColor = UIColor.random
+        //self.iconView.snp.makeConstraints { (make) in
+        //    make.leading.equalToSuperview().offset(self.lrMargin)
+        //    make.centerY.equalToSuperview()
+        //    make.size.equalTo(iconSize)
+        //}
+        // 2. titleLabel
         mainView.addSubview(self.titleLabel)
         self.titleLabel.set(text: nil, font: UIFont.systemFont(ofSize: 14), textColor: UIColor.init(hex: 0x333333))
         //self.titleLabel.snp.makeConstraints { (make) in
-        //    make.leading.equalToSuperview().offset(self.lrMargin)
+        //    make.leading.equalTo(self.iconView.snp.trailing).offset(self.lrMargin)
         //    make.centerY.equalToSuperview()
         //}
-        // 2. moreView
-        mainView.addSubview(self.moreView)
-        self.moreView.set(title: "更多", titleColor: UIColor.init(hex: 0x8797AC), for: .normal)
-        self.moreView.set(title: "更多", titleColor: UIColor.init(hex: 0x8797AC), for: .highlighted)
-        self.moreView.set(font: UIFont.systemFont(ofSize: 12))
-        self.moreView.contentHorizontalAlignment = .right
-        self.moreView.addTarget(self, action: #selector(moreViewClick(_:)), for: .touchUpInside)
-        //self.moreView.snp.makeConstraints { (make) in
+        // 3. detailLabel
+        mainView.addSubview(self.detailLabel)
+        self.detailLabel.set(text: nil, font: UIFont.systemFont(ofSize: 12), textColor: UIColor.init(hex: 0x666666))
+        //self.detailLabel.snp.makeConstraints { (make) in
+        //    make.leading.equalToSuperview().offset(detailLeftMargin)
+        //    make.centerY.equalToSuperview()
+        //}
+        // 4. moreBtn
+        mainView.addSubview(self.moreBtn)
+        self.moreBtn.set(title: "更多", titleColor: UIColor.init(hex: 0x333333), for: .normal)
+        self.moreBtn.set(title: "更多", titleColor: UIColor.init(hex: 0x333333), for: .highlighted)
+        self.moreBtn.set(font: UIFont.systemFont(ofSize: 14), cornerRadius: 5, borderWidth: 1, borderColor: UIColor.init(hex: 0x666666))
+        self.moreBtn.addTarget(self, action: #selector(moreBtnClick(_:)), for: .touchUpInside)
+        //self.moreBtn.snp.makeConstraints { (make) in
         //    make.trailing.equalToSuperview().offset(-self.lrMargin)
         //    make.centerY.equalToSuperview()
+        //    make.size.equalTo(doneBtnSize)
         //}
     }
     
 }
-// MARK: - Private UI Xib加载后处理
+// MARK: - UI Xib加载后处理
 extension TemplateUICollectionReusableView {
 
     /// awakeNib时的处理
@@ -133,7 +159,12 @@ extension TemplateUICollectionReusableView {
     /// 数据重置
     fileprivate func resetSelf() -> Void {
         self.titleLabel.text = nil
-        self.moreView.setTitle(nil, for: .normal)
+    }
+    ///
+    fileprivate func setupAsDemo() -> Void {
+        self.iconView.backgroundColor = UIColor.yellow
+        self.titleLabel.text = "我是标题"
+        self.detailLabel.text = "我是详情"
     }
     /// 数据加载
     fileprivate func setupModel(_ model: String?) -> Void {
@@ -143,12 +174,6 @@ extension TemplateUICollectionReusableView {
         }
         // 数据加载
         self.titleLabel.text = model
-        self.moreView.setTitle("更多", for: .normal)
-    }
-    ///
-    fileprivate func setupAsDemo() -> Void {
-        self.titleLabel.text = "哈哈哈"
-        self.moreView.setTitle("更多", for: .normal)
     }
 
 }
@@ -156,13 +181,17 @@ extension TemplateUICollectionReusableView {
 // MARK: - Event Function
 extension TemplateUICollectionReusableView {
 
-    ///
-    @objc fileprivate func moreViewClick(_ moreView: UIButton) -> Void {
+    //
+    @objc fileprivate func moreBtnClick(_ moreBtn: UIButton) -> Void {
         print("TemplateUICollectionReusableView moreViewClick")
-        self.delegate?.reusableView(self, didClickedMore: moreView)
-        self.moreClickAction?(self, moreView)
+        self.delegate?.reusableView(self, didClickedMore: moreBtn)
+        self.moreClickAction?(self, moreBtn)
     }
 
 }
 
+// MARK: - Notification Function
+
 // MARK: - Extension Function
+
+// MARK: - Delegate Function

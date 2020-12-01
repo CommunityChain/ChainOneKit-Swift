@@ -48,8 +48,11 @@ class TemplateHorScrollPageController: UIViewController
 }
 
 // MARK: - Internal Function
+extension TemplateHorScrollPageController {
+    
+}
 
-// MARK: - LifeCircle Function
+// MARK: - LifeCircle/Override Function
 extension TemplateHorScrollPageController {
 
     override func viewDidLoad() {
@@ -69,7 +72,7 @@ extension TemplateHorScrollPageController {
 
 }
 
-// MARK: - UI
+// MARK: - UI Function
 extension TemplateHorScrollPageController {
 
     /// 页面布局
@@ -116,7 +119,7 @@ extension TemplateHorScrollPageController {
     
 }
 
-// MARK: - Data(数据处理与加载)
+// MARK: - Data Function
 extension TemplateHorScrollPageController {
 
     /// 默认数据加载
@@ -128,7 +131,7 @@ extension TemplateHorScrollPageController {
 
 }
 
-// MARK: - Event(事件响应)
+// MARK: - Event Function
 extension TemplateHorScrollPageController {
     
     /// segment点击响应
@@ -139,7 +142,17 @@ extension TemplateHorScrollPageController {
 
 }
 
-// MARK: - Notification
+// MARK: - Request Function
+extension TemplateHorScrollPageController {
+    
+}
+
+// MARK: - Enter Page
+extension TemplateHorScrollPageController {
+    
+}
+
+// MARK: - Notification Function
 extension TemplateHorScrollPageController {
     
 }

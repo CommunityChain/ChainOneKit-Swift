@@ -61,8 +61,11 @@ class TemplateWKWebViewController: UIViewController
 }
 
 // MARK: - Internal Function
+extension TemplateWKWebViewController {
+    
+}
 
-// MARK: - LifeCircle Function
+// MARK: - LifeCircle/Override Function
 extension TemplateWKWebViewController {
 
     override func viewDidLoad() {
@@ -82,7 +85,7 @@ extension TemplateWKWebViewController {
 
 }
 
-// MARK: - UI
+// MARK: - UI Function
 extension TemplateWKWebViewController {
 
     /// 页面布局
@@ -106,7 +109,7 @@ extension TemplateWKWebViewController {
 
 }
 
-// MARK: - Data(数据处理与加载)
+// MARK: - Data Function
 extension TemplateWKWebViewController {
 
     /// 默认数据加载
@@ -136,12 +139,22 @@ extension TemplateWKWebViewController {
 
 }
 
-// MARK: - Event(事件响应)
+// MARK: - Event Function
 extension TemplateWKWebViewController {
     
 }
 
-// MARK: - Notification
+// MARK: - Request Function
+extension TemplateWKWebViewController {
+    
+}
+
+// MARK: - Enter Page
+extension TemplateWKWebViewController {
+    
+}
+
+// MARK: - Notification Function
 extension TemplateWKWebViewController {
     
 }

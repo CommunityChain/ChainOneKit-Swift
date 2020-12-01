@@ -9,7 +9,14 @@
 
 import UIKit
 
-/// UITableViewCell的使用模板
+protocol TemplateUITableViewCellProtocol: class {
+
+    /// xxx点击回调
+    func templateCell(_ cell: TemplateUITableViewCell, didClickedDone doneView: UIView) -> Void
+
+}
+
+///
 class TemplateUITableViewCell: UITableViewCell
 {
     
@@ -25,6 +32,11 @@ class TemplateUITableViewCell: UITableViewCell
             self.setupWithModel(model)
         }
     }
+    
+    /// 回调
+    weak var delegate: TemplateUITableViewCellProtocol?
+    var doneClickAction: ((_ cell: TemplateUITableViewCell, _ doneView: UIView) -> Void)?
+
     
     var showBottomLine: Bool = true {
         didSet {
@@ -48,13 +60,16 @@ class TemplateUITableViewCell: UITableViewCell
     fileprivate let mainView: UIView = UIView()
     fileprivate let bottomLine: UIView = UIView()
     
+    fileprivate let iconView: UIImageView = UIImageView.init()
     fileprivate let titleLabel: UILabel = UILabel.init()
     fileprivate let detailLabel: UILabel = UILabel.init()
-    fileprivate let moreView: UIImageView = UIImageView.init()
+    fileprivate let doneBtn: UIButton = UIButton.init(type: .custom)
     
     fileprivate let topSeparateMargin: CGFloat = 5      // 顶部间距，多用于分组首个cell时的间距展示；
     fileprivate let bottomSeparateMargin: CGFloat = 5   // 底部间距
-    fileprivate let lrMargin: CGFloat = 12
+    fileprivate let mainOutLrMargin: CGFloat = 12
+    fileprivate let mainInLrMargin: CGFloat = 12
+
     fileprivate let detailLeftMargin: CGFloat = 100
     
     
@@ -97,7 +112,7 @@ extension TemplateUITableViewCell {
 
 }
 
-// MARK: - Override Function
+// MARK: - LifeCircle/Override Function
 extension TemplateUITableViewCell {
 
     override func awakeFromNib() {
@@ -113,7 +128,7 @@ extension TemplateUITableViewCell {
 
 }
 
-// MARK: - UI 界面布局
+// MARK: - UI Function
 extension TemplateUITableViewCell {
 
     // 界面布局
@@ -122,52 +137,71 @@ extension TemplateUITableViewCell {
         // mainView - 整体布局，便于扩展，特别是针对分割、背景色、四周间距
         self.contentView.addSubview(mainView)
         self.initialMainView(self.mainView)
-//        mainView.snp.makeConstraints { (make) in
-//            make.leading.trailing.equalToSuperview()
-//            make.top.equalToSuperview().offset(0)
-//            make.bottom.equalToSuperview().offset(-self.bottomSeparateMargin)
-//        }
-    }
-    // 主视图布局
-    fileprivate func initialMainView(_ mainView: UIView) -> Void {
-        mainView.backgroundColor = UIColor.white
-        // 1. titleLabel
-        mainView.addSubview(self.titleLabel)
-        self.titleLabel.set(text: nil, font: UIFont.systemFont(ofSize: 14), textColor: UIColor.init(hex: 0x333333))
-        //self.titleLabel.snp.makeConstraints { (make) in
-        //    make.leading.equalToSuperview().offset(self.lrMargin)
-        //    make.centerY.equalToSuperview()
+        //mainView.snp.makeConstraints { (make) in
+        //    make.leading.equalToSuperview().offset(self.mainOutLrMargin)
+        //    make.trailing.equalToSuperview().offset(-self.mainOutLrMargin)
+        //    make.top.equalToSuperview().offset(0)
+        //    make.bottom.equalToSuperview().offset(-self.bottomSeparateMargin)
         //}
-        // 2. detailLabel
-        mainView.addSubview(self.detailLabel)
-        self.detailLabel.set(text: nil, font: UIFont.systemFont(ofSize: 12), textColor: UIColor.init(hex: 0x666666))
-        //self.detailLabel.snp.makeConstraints { (make) in
-        //    make.leading.equalToSuperview().offset(self.detailLeftMargin)
-        //    make.centerY.equalToSuperview()
-        //}
-        // 3. moreView
-        mainView.addSubview(self.moreView)
-        self.moreView.set(cornerRadius: 0)
-        self.moreView.image = UIImage.init(named: "")
-        //self.accessoryView.snp.makeConstraints { (make) in
-        //    make.trailing.equalToSuperview().offset(-self.lrMargin)
-        //    make.centerY.equalToSuperview()
-        //}
-        // 4. bottomLine
+        // bottomLine
         mainView.addSubview(self.bottomLine)
         self.bottomLine.backgroundColor = UIColor.init(hex: 0xE2E2E2)
         self.bottomLine.isHidden = true     // 默认隐藏
         //self.bottomLine.snp.makeConstraints { (make) in
-        //    make.leading.equalToSuperview().offset(self.lrMargin)
-        //    make.trailing.equalToSuperview().offset(-self.lrMargin)
+        //    make.leading.equalToSuperview().offset(self.mainInLrMargin)
+        //    make.trailing.equalToSuperview().offset(-self.mainInLrMargin)
         //    make.bottom.equalToSuperview()
         //    make.height.equalTo(0.5)
+        //}
+    }
+    // 主视图布局
+    fileprivate func initialMainView(_ mainView: UIView) -> Void {
+        mainView.backgroundColor = UIColor.white
+
+        //let iconSize: CGSize = CGSize.init(width: 10, height: 10)
+        //let iconTitleHorMargin: CGFloat = 10
+        //let detailLeftMargin: CGFloat = 100
+        //let doneBtnSize: CGSize = CGSize.init(width: 60, height: 30)
+        // 1. iconView
+        mainView.addSubview(self.iconView)
+        self.iconView.set(cornerRadius: 0)
+        self.iconView.image = UIImage.init(named: "")
+        self.iconView.backgroundColor = UIColor.random
+        //self.iconView.snp.makeConstraints { (make) in
+        //    make.leading.equalToSuperview().offset(self.lrMargin)
+        //    make.centerY.equalToSuperview()
+        //    make.size.equalTo(iconSize)
+        //}
+        // 2. titleLabel
+        mainView.addSubview(self.titleLabel)
+        self.titleLabel.set(text: nil, font: UIFont.systemFont(ofSize: 14), textColor: UIColor.init(hex: 0x333333))
+        //self.titleLabel.snp.makeConstraints { (make) in
+        //    make.leading.equalTo(self.iconView.snp.trailing).offset(self.lrMargin)
+        //    make.centerY.equalToSuperview()
+        //}
+        // 3. detailLabel
+        mainView.addSubview(self.detailLabel)
+        self.detailLabel.set(text: nil, font: UIFont.systemFont(ofSize: 12), textColor: UIColor.init(hex: 0x666666))
+        //self.detailLabel.snp.makeConstraints { (make) in
+        //    make.leading.equalToSuperview().offset(detailLeftMargin)
+        //    make.centerY.equalToSuperview()
+        //}
+        // 4. doneBtn
+        mainView.addSubview(self.doneBtn)
+        self.doneBtn.set(title: "完成", titleColor: UIColor.init(hex: 0x333333), for: .normal)
+        self.doneBtn.set(title: "完成", titleColor: UIColor.init(hex: 0x333333), for: .highlighted)
+        self.doneBtn.set(font: UIFont.systemFont(ofSize: 14), cornerRadius: 5, borderWidth: 1, borderColor: UIColor.init(hex: 0x666666))
+        self.doneBtn.addTarget(self, action: #selector(doneBtnClick(_:)), for: .touchUpInside)
+        //self.doneBtn.snp.makeConstraints { (make) in
+        //    make.trailing.equalToSuperview().offset(-self.lrMargin)
+        //    make.centerY.equalToSuperview()
+        //    make.size.equalTo(doneBtnSize)
         //}
     }
 
 }
 
-// MARK: - Data 数据加载
+// MARK: - Data Function
 extension TemplateUITableViewCell {
 
     /// 顶部间距是否显示
@@ -195,6 +229,11 @@ extension TemplateUITableViewCell {
         self.showBottomMargin = true
         self.showBottomLine = true
     }
+    ///
+    fileprivate func setupAsDemo() -> Void {
+        self.titleLabel.text = "我是标题"
+        self.detailLabel.text = "我是详情"
+    }
     /// 数据加载
     fileprivate func setupWithModel(_ model: String?) -> Void {
         self.setupAsDemo()
@@ -204,15 +243,37 @@ extension TemplateUITableViewCell {
         // 控件加载数据
         
     }
-    ///
-    fileprivate func setupAsDemo() -> Void {
-        self.titleLabel.text = "我是标题"
-        self.detailLabel.text = "我是详情"
-    }
 
 }
 
-// MARK: - Event  事件响应
+// MARK: - Event Function
+extension TemplateUITableViewCell {
+
+    ///
+    @objc fileprivate func doneBtnClick(_ doneBtn: UIButton) -> Void {
+        print("TemplateUITableViewCell doneBtnClick")
+        guard let model = self.model else {
+            return
+        }
+        self.delegate?.templateCell(self, didClickedDone: doneBtn)
+        self.doneClickAction?(self, doneBtn)
+    }
+    
+}
+
+// MARK: - Notification Function
+extension TemplateUITableViewCell {
+    
+}
+
+// MARK: - Extension Function
+extension TemplateUITableViewCell {
+    
+}
+
+// MARK: - Delegate Function
+
+// MARK: - <XXXDelegate>
 extension TemplateUITableViewCell {
     
 }

@@ -31,8 +31,11 @@ class TemplatePresentedController: UIViewController
 }
 
 // MARK: - Internal Function
+extension TemplatePresentedController {
+    
+}
 
-// MARK: - LifeCircle Function
+// MARK: - LifeCircle/Override Function
 extension TemplatePresentedController {
 
     override func viewDidLoad() {
@@ -52,7 +55,7 @@ extension TemplatePresentedController {
 
 }
 
-// MARK: - UI
+// MARK: - UI Function
 extension TemplatePresentedController {
 
     /// 页面布局
@@ -63,7 +66,7 @@ extension TemplatePresentedController {
 
 }
 
-// MARK: - Data(数据处理与加载)
+// MARK: - Data Function
 extension TemplatePresentedController {
 
     /// 默认数据加载
@@ -73,12 +76,22 @@ extension TemplatePresentedController {
 
 }
 
-// MARK: - Event(事件响应)
+// MARK: - Event Function
 extension TemplatePresentedController {
     
 }
 
-// MARK: - Notification
+// MARK: - Request Function
+extension TemplatePresentedController {
+    
+}
+
+// MARK: - Enter Page
+extension TemplatePresentedController {
+    
+}
+
+// MARK: - Notification Function
 extension TemplatePresentedController {
     
 }

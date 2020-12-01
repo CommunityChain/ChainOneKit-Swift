@@ -9,7 +9,14 @@
 
 import UIKit
 
-///  UICollectionViewCell 的使用模板
+protocol TemplateUICollectionViewCellProtocol: class {
+
+    /// xxx点击回调
+    func templateCell(_ cell: TemplateUICollectionViewCell, didClickDoneView doneView: UIButton) -> Void
+
+}
+
+///
 class TemplateUICollectionViewCell: UICollectionViewCell {
     
     // MARK: - Internal Property
@@ -22,18 +29,22 @@ class TemplateUICollectionViewCell: UICollectionViewCell {
         }
     }
     
+    /// 回调
+    weak var delegate: TemplateUICollectionViewCellProtocol?
+    var doneClickAction: ((_ cell: TemplateUICollectionViewCell, _ doneView: UIButton) -> Void)?
+
+    
     // MARK: - Private Property
     
     fileprivate let mainView: UIView = UIView.init()
 
+    fileprivate let iconView: UIImageView = UIImageView.init()
     fileprivate let titleLabel: UILabel = UILabel.init()
     fileprivate let detailLabel: UILabel = UILabel.init()
-    fileprivate let accessoryView: UIImageView = UIImageView.init()
+    fileprivate let doneBtn: UIButton = UIButton.init(type: .custom)
     fileprivate let bottomLine: UIView = UIView.init()
     
     fileprivate let lrMargin: CGFloat = 12
-    fileprivate let detailLeftMargin: CGFloat = 100
-    fileprivate let accessorySize: CGSize = CGSize.init(width: 20, height: 20)
 
     
     // MARK: - Initialize Function
@@ -60,6 +71,7 @@ class TemplateUICollectionViewCell: UICollectionViewCell {
 // MARK: - Internal Function
 extension TemplateUICollectionViewCell {
 
+    ///
     class func cellInCollectionView(_ collectionView: UICollectionView, at indexPath: IndexPath) -> TemplateUICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.identifier, for: indexPath)
         (cell as! TemplateUICollectionViewCell).resetSelf()
@@ -68,7 +80,7 @@ extension TemplateUICollectionViewCell {
     
 }
 
-// MARK: - LifeCircle Function
+// MARK: - LifeCircle/Override Function
 extension TemplateUICollectionViewCell {
 
     override func awakeFromNib() {
@@ -77,7 +89,7 @@ extension TemplateUICollectionViewCell {
     }
 
 }
-// MARK: - Private UI 手动布局
+// MARK: - UI Function(手动布局)
 extension TemplateUICollectionViewCell {
     
     /// 界面布局
@@ -86,48 +98,57 @@ extension TemplateUICollectionViewCell {
         // mainView
         self.addSubview(self.mainView)
         self.initialMainView(self.mainView)
-//        self.mainView.snp.makeConstraints { (make) in
-//            make.edges.equalToSuperview()
-//        }
+        //self.mainView.snp.makeConstraints { (make) in
+        //    make.edges.equalToSuperview()
+        //}
     }
     /// mainView布局
     fileprivate func initialMainView(_ mainView: UIView) -> Void {
-        // 1. titleLabel
+        mainView.backgroundColor = UIColor.white
+        
+        //let iconSize: CGSize = CGSize.init(width: 10, height: 10)
+        //let iconTitleHorMargin: CGFloat = 10
+        //let detailLeftMargin: CGFloat = 100
+        //let doneBtnSize: CGSize = CGSize.init(width: 60, height: 30)
+        // 1. iconView
+        mainView.addSubview(self.iconView)
+        self.iconView.set(cornerRadius: 0)
+        self.iconView.image = UIImage.init(named: "")
+        self.iconView.backgroundColor = UIColor.random
+        //self.iconView.snp.makeConstraints { (make) in
+        //    make.leading.equalToSuperview().offset(self.lrMargin)
+        //    make.centerY.equalToSuperview()
+        //    make.size.equalTo(iconSize)
+        //}
+        // 2. titleLabel
         mainView.addSubview(self.titleLabel)
         self.titleLabel.set(text: nil, font: UIFont.systemFont(ofSize: 14), textColor: UIColor.init(hex: 0x333333))
         //self.titleLabel.snp.makeConstraints { (make) in
-        //    make.leading.equalToSuperview().offset(self.lrMargin)
+        //    make.leading.equalTo(self.iconView.snp.trailing).offset(self.lrMargin)
         //    make.centerY.equalToSuperview()
         //}
-        // 2. detailLabel
+        // 3. detailLabel
         mainView.addSubview(self.detailLabel)
         self.detailLabel.set(text: nil, font: UIFont.systemFont(ofSize: 12), textColor: UIColor.init(hex: 0x666666))
         //self.detailLabel.snp.makeConstraints { (make) in
-        //    make.leading.equalToSuperview().offset(self.detailLeftMargin)
+        //    make.leading.equalToSuperview().offset(detailLeftMargin)
         //    make.centerY.equalToSuperview()
         //}
-        // 3. accessoryView
-        mainView.addSubview(self.accessoryView)
-        self.accessoryView.set(cornerRadius: 0)
-        self.accessoryView.image = UIImage.init(named: "")
-        //self.accessoryView.snp.makeConstraints { (make) in
+        // 4. doneBtn
+        mainView.addSubview(self.doneBtn)
+        self.doneBtn.set(title: "完成", titleColor: UIColor.init(hex: 0x333333), for: .normal)
+        self.doneBtn.set(title: "完成", titleColor: UIColor.init(hex: 0x333333), for: .highlighted)
+        self.doneBtn.set(font: UIFont.systemFont(ofSize: 14), cornerRadius: 5, borderWidth: 1, borderColor: UIColor.init(hex: 0x666666))
+        self.doneBtn.addTarget(self, action: #selector(doneBtnClick(_:)), for: .touchUpInside)
+        //self.doneBtn.snp.makeConstraints { (make) in
         //    make.trailing.equalToSuperview().offset(-self.lrMargin)
         //    make.centerY.equalToSuperview()
-        //}
-        // 4. bottomLine
-        mainView.addSubview(self.bottomLine)
-        self.bottomLine.backgroundColor = UIColor.init(hex: 0xE2E2E2)
-        self.bottomLine.isHidden = true     // 默认隐藏
-        //self.bottomLine.snp.makeConstraints { (make) in
-        //    make.leading.equalToSuperview().offset(self.lrMargin)
-        //    make.trailing.equalToSuperview().offset(-self.lrMargin)
-        //    make.bottom.equalToSuperview()
-        //    make.height.equalTo(0.5)
+        //    make.size.equalTo(doneBtnSize)
         //}
     }
     
 }
-// MARK: - Private UI Xib加载后处理
+// MARK: - UI Xib加载后处理
 extension TemplateUICollectionViewCell {
 
     /// awakeNib时的处理
@@ -147,6 +168,11 @@ extension TemplateUICollectionViewCell {
         self.detailLabel.text = nil
         //self.accessoryView.image = nil
     }
+    ///
+    fileprivate func setupAsDemo() -> Void {
+        self.titleLabel.text = "我是标题"
+        self.detailLabel.text = "我是详情"
+    }
     /// 数据加载
     fileprivate func setupWithModel(_ model: String?) -> Void {
         self.setupAsDemo()
@@ -155,19 +181,39 @@ extension TemplateUICollectionViewCell {
         }
         /// 控件加载数据
     }
-    ///
-    fileprivate func setupAsDemo() -> Void {
-        self.titleLabel.text = "我是标题"
-        self.detailLabel.text = "我是详情"
-    }
 
 }
 
 // MARK: - Event Function
+extension TemplateUICollectionViewCell {
+
+    //
+    @objc fileprivate func doneBtnClick(_ doneBtn: UIButton) -> Void {
+        print("TemplateUICollectionViewCell doneBtnClick")
+        guard let model = self.model else {
+            return
+        }
+        self.delegate?.templateCell(self, didClickDoneView: doneBtn)
+        self.doneClickAction?(self, doneBtn)
+    }
+
+}
+
+// MARK: - Notification Function
+extension TemplateUICollectionViewCell {
+
+}
 
 // MARK: - Extension Function
+extension TemplateUICollectionViewCell {
 
-// MARK: - <>
+}
 
+// MARK: - Delegate Function
+
+// MARK: - <XXXDelegate>
+extension TemplateUICollectionViewCell {
+
+}
 
 
