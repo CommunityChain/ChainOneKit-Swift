@@ -1,6 +1,6 @@
 ## Usaing
 ```
-pod 'ChainOneKit-Swift', :git => 'https://github.com/CommunityChain/ChainOneKit-Swift.git', :tag => '0.1.1'
+pod 'ChainOneKit-Swift', :git => 'https://github.com/CommunityChain/ChainOneKit-Swift.git', :tag => '0.1.1.1'
 ```
 
 ```
@@ -13,7 +13,7 @@ git tag --list
 0.0.8
 0.0.9
 0.0.9.1
-0.1.1
+0.1.1.1
 ```
 
 
