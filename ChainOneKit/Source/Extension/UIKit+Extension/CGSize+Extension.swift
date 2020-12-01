@@ -10,10 +10,10 @@
 import Foundation
 import UIKit
 
-extension CGSize {
+public extension CGSize {
 
     /// 宽高都为最大值的尺寸
-    public static let max: CGSize = CGSize(width: CGFloat(MAXFLOAT), height: CGFloat(MAXFLOAT))
+    static let max: CGSize = CGSize(width: CGFloat(MAXFLOAT), height: CGFloat(MAXFLOAT))
     
 
 }

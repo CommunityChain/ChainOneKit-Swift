@@ -10,7 +10,7 @@
 import Foundation
 import UIKit
 
-extension UIFont {
+public extension UIFont {
 
     /// 平方字体
     class func pingFangSCFont(size: CGFloat, weight: UIFont.Weight = UIFont.Weight.regular) -> UIFont {
