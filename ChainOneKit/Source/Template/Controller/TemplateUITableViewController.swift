@@ -77,6 +77,7 @@ extension TemplateUITableViewController {
         self.tableView.estimatedRowHeight = 250
         self.tableView.showsVerticalScrollIndicator = false
         self.tableView.backgroundColor = UIColor.white
+        self.tableView.keyboardDismissMode = UIScrollView.KeyboardDismissMode.onDrag
         //self.tableView.mj_header = XDRefreshHeader(refreshingTarget: self, refreshingAction: #selector(headerRefresh))
         //self.tableView.mj_footer = XDRefreshFooter(refreshingTarget: self, refreshingAction: #selector(footerLoadMore))
         //self.tableView.mj_header.isHidden = false
